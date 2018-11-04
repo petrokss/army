@@ -15,6 +15,10 @@ const int Unit::getHp() const {
     return this->hp;
 }
 
+void Unit::setHp(int value) {
+    this->hp = value;
+}
+
 const int Unit::getDamage() const {
     return this->damage;
 }

@@ -23,6 +23,7 @@ class Unit {
         const int getHp() const;
         const int getDamage() const;
         const std::string& getName() const;
+        void setHp(int value);
 
 
         void takeDamage(Unit* enemy);
