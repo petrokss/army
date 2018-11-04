@@ -2,12 +2,14 @@
 #define UNIT_H
 
 #include <iostream>
+#include "../attack/BaseAttack.h"
 
 class Unit {
     private:
         int hp;
         int damage;
         std::string* name;
+        BaseAttack* unit_attack;
     public:
         Unit(int hp, int damage, const std::string& name);
         ~Unit();
