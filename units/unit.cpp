@@ -1,7 +1,7 @@
 #include <iostream>
 #include "Unit.h"
 
-Unit::Unit(int hp, int damage, const std::string& name) : hp(hp), damage(damage), name(new std::string(name)) {
+Unit::Unit(int hp, int damage, const std::string& name, BaseAttack* unit_attack) : hp(hp), damage(damage), name(new std::string(name)), unit_attack(unit_attack) {
     std::cout << "Unit constructor(" << *(this->name) << ")" << std::endl;
 }
 
