@@ -4,10 +4,9 @@
 #include "Unit.h"
 
 class Rouge : public Unit {
-    Rouge(const::std string& name="Rouge");
-    virtual ~Rouge();
-
-    virtual void 
+    public:
+        Rouge( const std::string& name="Rouge");
+        virtual ~Rouge();
 
 };
 
