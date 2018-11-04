@@ -4,6 +4,9 @@
 #include <iostream>
 #include "../attack/BaseAttack.h"
 
+//class UnitIsDead{};
+class BaseAttack;
+
 class Unit {
     private:
         int hp;
@@ -11,7 +14,10 @@ class Unit {
         std::string* name;
         BaseAttack* unit_attack;
     public:
-        Unit(int hp, int damage, const std::string& name, BaseAttack* unit_attack);
+        Unit(int hp,
+             int damage,
+             const std::string& name,
+             BaseAttack* unit_attack);
         ~Unit();
 
         const int getHp() const;

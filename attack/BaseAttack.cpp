@@ -1,18 +1,16 @@
-#include "Baseattack.h"
+#include "BaseAttack.h"
 
-Baseattack::BaseAttack() {
+BaseAttack::BaseAttack() {
     std::cout << "Baseattack construntor" << std::endl;
 }
-Baseattack::~BaseAttack() {
-    std::cout << "Baseattak destruntor" << std::endl;
 
+BaseAttack::~BaseAttack() {
+    std::cout << "Baseattak destruntor" << std::endl;
 }
 
-void Baseattack::attack(Unit* enemy) {
+void BaseAttack::attack(Unit* attacker, Unit* enemy) {
     if ( enemy->getHp() > 0 ) {
-        enemy->takeDamage(this);
-        enemy->counterAttack(this);
+        enemy->takeDamage(attacker);
+        enemy->counterAttack(attacker);
     }
 }
-
-void Baseattack::attack(Unit* attacker, Unit* enemy);

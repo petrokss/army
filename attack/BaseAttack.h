@@ -1,5 +1,5 @@
-#ifndef BASEATTAK_H
-#define BASEATTAK_H
+#ifndef BASEATTACK_H
+#define BASEATTACK_H
 
 #include <iostream>
 #include "../units/Unit.h"
@@ -7,11 +7,11 @@
 class Unit;
 
 class BaseAttack {
-    BaseAttack();
-    ~BaseAttack();
-
-    void attack(Unit* attacker, Unit* enemy);
-
+    public:
+        BaseAttack();
+        virtual ~BaseAttack();
+        
+        virtual void attack(Unit* attacker, Unit* enemy);
 };
 
-#endif //BASEATTAK_H
+#endif // BASEATTACK_H

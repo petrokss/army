@@ -6,16 +6,19 @@ Unit::Unit(int hp, int damage, const std::string& name, BaseAttack* unit_attack)
 }
 
 Unit::~Unit() {
-    std::cout << "unit destruntor: (" << *(this->name) << ")"<< std::endl;
-    delete (this->name);
+    std::cout << "Unit destructor(" << *(this->name) << ")" << std::endl;
+    delete(this->name);
+    delete(this->unit_attack);
 }
 
 const int Unit::getHp() const {
     return this->hp;
 }
+
 const int Unit::getDamage() const {
     return this->damage;
 }
+
 const std::string& Unit::getName() const {
     return *(this->name);
 }
@@ -38,10 +41,7 @@ void Unit::takeCounterAttackDamage(Unit* enemy) {
 }
 
 void Unit::attack(Unit* enemy) {
-    if ( this->hp > 0 ) {
-        enemy->takeDamage(this);
-        enemy->counterAttack(this);
-    }
+    this->unit_attack->attack(this, enemy);
 }
 
 void Unit::counterAttack(Unit* enemy) {
@@ -51,9 +51,10 @@ void Unit::counterAttack(Unit* enemy) {
 }
 
 std::ostream& operator<<(std::ostream& out, Unit& unit ){
-    out << "name: " << unit.getName();
-    out << ", hp: " << unit.getHp();
-    out << ", damage: " << unit.getDamage();
+    out << unit.getName();
+    out << " [hp: " << unit.getHp();
+    out << ", dmg: " << unit.getDamage();
+    out << "]";
     return out;
 }
 
