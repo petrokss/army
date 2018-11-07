@@ -15,6 +15,10 @@ const int Unit::getHp() const {
     return this->unit_state->getHp();
 }
 
+void Unit::addHp(int value) {
+    this->unit_state->addHp(value);
+}
+
 const int Unit::getDamage() const {
     return this->unit_state->getDamage();
 }
@@ -35,7 +39,7 @@ void Unit::takeCounterAttackDamage(Unit* enemy) {
     }
 }
 
-void Unit::attack(Unit* enemy) {
+    void Unit::attack(Unit* enemy) {
     this->unit_attack->attack(this, enemy);
 }
 

@@ -6,7 +6,7 @@ BerserkerAttack::BerserkerAttack() {
 BerserkerAttack::~BerserkerAttack() {
     std::cout << "BerserkerAttack destructor" << std::endl;
 }
-//НА НЕГО НЕ ДЕЙСТВУЕТ МАГИЯ ADD THIS 
+//MAGIC DOESN'T AFFECT HIM-
 void BerserkerAttack::attack(Unit* attacker, Unit* enemy) {
     if ( enemy->getHp() > 0 ) {
         enemy->takeDamage(attacker);
