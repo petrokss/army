@@ -1,7 +1,7 @@
 #include <iostream>
 #include "Unit.h"
-
-Unit::Unit(int hp, int damage, const std::string& name, BaseAttack* unit_attack) : hp(hp), damage(damage), name(new std::string(name)), unit_attack(unit_attack) {
+//NEW????
+Unit::Unit(State* unit_state, BaseAttack* unit_attack) : unit_state(unit_state), unit_attack(unit_attack) {
     std::cout << "Unit constructor(" << *(this->name) << ")" << std::endl;
 }
 
@@ -12,32 +12,23 @@ Unit::~Unit() {
 }
 
 const int Unit::getHp() const {
-    return this->hp;
-}
-
-void Unit::setHp(int value) {
-    this->hp = value;
+    return this->unit_state->getHp();
 }
 
 const int Unit::getDamage() const {
-    return this->damage;
+    return this->unit_state->getDamage();
 }
 
 const std::string& Unit::getName() const {
-    return *(this->name);
+    return this->unit_state->getName();
 }
 
 void Unit::takeDamage(Unit* enemy) {
-    this->hp -= enemy->getDamage();
-
-    if ( this->hp < 0 ) {
-        this->hp = 0;
-    }
-
+    this->unit_state->takeDamage(enemy->unit_state);
 }
 
 void Unit::takeCounterAttackDamage(Unit* enemy) {
-    this->hp -= enemy->getDamage() / 2;
+    this->hp -= enemy->unit_state->getDamage() / 2;
 
     if ( this->hp < 0 ) {
         this->hp = 0;

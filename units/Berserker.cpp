@@ -1,6 +1,6 @@
 #include "Berserker.h"
 
-Berserker::Berserker(const std::string& name) : Unit(70, 10, name, new BaseAttack()) {
+Berserker::Berserker(const std::string& name) : Unit(new State(70, 10, name), new BaseAttack()) {
     std::cout << "Berserker construntor" << std::endl;
 }
 

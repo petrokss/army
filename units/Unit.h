@@ -3,9 +3,10 @@
 
 #include <iostream>
 #include "../attack/BaseAttack.h"
+#include "State.h"
 
-//class UnitIsDead{};
 class BaseAttack;
+class State;
 
 class Unit {
     private:
@@ -13,20 +14,17 @@ class Unit {
         int damage;
         std::string* name;
         BaseAttack* unit_attack;
+        State* unit_state;
     public:
-        Unit(int hp,
-             int damage,
-             const std::string& name,
-             BaseAttack* unit_attack);
+        Unit(State* unit_state, BaseAttack* unit_attack);
         ~Unit();
 
         const int getHp() const;
         const int getDamage() const;
         const std::string& getName() const;
-        void setHp(int value);
-
 
         void takeDamage(Unit* enemy);
+        void getDamage(Unit* enemy);
         void takeCounterAttackDamage(Unit* enemy);
         void attack(Unit* enemy);
         void counterAttack(Unit* enemy);
