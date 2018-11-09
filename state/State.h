@@ -2,15 +2,12 @@
 #define STATE_H
 
 #include <iostream>
-#include "Unit.h"
-#include "../attack/BaseAttack.h"
-
-class Unit;
-//class BaseAttack;
+#include "../exceptions.h"
 
 class State {
     private:
         int hp;
+        int hpLimit;
         int damage;
         std::string* name;
     public:
@@ -21,14 +18,14 @@ class State {
 
         const int getHp() const;
         const int getDamage() const;
-        const std::string& getName() const;    
+        const std::string& getName() const;   
         
         void checkIfAlive();
         void addHp(int value);
-        void takeDamage(State* enemy);
+        void takeDamage(int damage);
               
 };
 
-std::ostream& operator<<(std::ostream& out, Unit& unit );
+std::ostream& operator<<(std::ostream& out, State& state );
 
 #endif // STATE_H

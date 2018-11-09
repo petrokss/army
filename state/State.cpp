@@ -24,17 +24,26 @@ const std::string& State::getName() const {
 void State::checkIfAlive() {
     if (this->getHp() <= 0 ) {
         std::cout << this->getName() << "is dead." << std::endl;
-        //this->~State();
+        throw OutOfHpException();
     }
 }
 
-void State::takeDamage(State* enemy) {
-    this->hp -= enemy->getDamage();
-
+void State::takeDamage(int damage) {
+    this->hp -= damage;
     this->checkIfAlive();
 }
 
 void State::addHp(int value) {
     this->hp += value;
+    if (this->hp > this->hpLimit ) {
+        this->hp = this->hpLimit;
+    }
 }
 
+std::ostream& operator<<(std::ostream& out, State& state ){
+    out << state.getName();
+    out << " [hp: " << state.getHp();
+    out << ", dmg: " << state.getDamage();
+    out << "]";
+    return out;
+}

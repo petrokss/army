@@ -3,29 +3,26 @@
 
 #include <iostream>
 #include "../attack/BaseAttack.h"
-#include "State.h"
+#include "../state/State.h"
 
 class BaseAttack;
-class State;
 
 class Unit {
     private:
         int hp;
-        int damage;
-        std::string* name;
         BaseAttack* unit_attack;
         State* unit_state;
     public:
-        Unit(State* unit_state, BaseAttack* unit_attack);
+        Unit(int hp, int damage, const std::string& name);
         ~Unit();
 
         const int getHp() const;
         const int getDamage() const;
         const std::string& getName() const;
+        State& getState() const; 
 
         void addHp(int value);
-        void takeDamage(Unit* enemy);
-        void getDamage(Unit* enemy);
+        void takeDamage(int damage);
         void takeCounterAttackDamage(Unit* enemy);
         void attack(Unit* enemy);
         void counterAttack(Unit* enemy);

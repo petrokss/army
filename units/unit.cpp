@@ -1,14 +1,16 @@
 #include <iostream>
 #include "Unit.h"
 //NEW????
-Unit::Unit(State* unit_state, BaseAttack* unit_attack) : unit_state(unit_state), unit_attack(unit_attack) {
-    std::cout << "Unit constructor(" << *(this->name) << ")" << std::endl;
+Unit::Unit(int hp, int damage, const std::string& name) {
+    this->unit_state = new State(hp, damage, name);
+    this->unit_attack = new BaseAttack();
+    std::cout << "Unit constructor(" << this->unit_state->getName() << ")" << std::endl;
 }
 
 Unit::~Unit() {
-    std::cout << "Unit destructor(" << *(this->name) << ")" << std::endl;
-    delete(this->name);
-    delete(this->unit_attack);
+    std::cout << "Unit destructor(" << this->unit_state->getName() << ")" << std::endl;
+    //delete(this->name);
+    //delete(this->unit_attack);
 }
 
 const int Unit::getHp() const {
@@ -27,8 +29,12 @@ const std::string& Unit::getName() const {
     return this->unit_state->getName();
 }
 
-void Unit::takeDamage(Unit* enemy) {
-    this->unit_state->takeDamage(enemy->unit_state);
+State& Unit::getState() const {
+    return *(this->unit_state);
+}
+
+void Unit::takeDamage(int damage) {
+    this->unit_state->takeDamage(damage);
 }
 
 void Unit::takeCounterAttackDamage(Unit* enemy) {
@@ -50,10 +56,7 @@ void Unit::counterAttack(Unit* enemy) {
 }
 
 std::ostream& operator<<(std::ostream& out, Unit& unit ){
-    out << unit.getName();
-    out << " [hp: " << unit.getHp();
-    out << ", dmg: " << unit.getDamage();
-    out << "]";
+    out << unit.getState();
     return out;
 }
 
