@@ -12,6 +12,7 @@ class BaseAttack {
         virtual ~BaseAttack();
         
         virtual void attack(Unit* attacker, Unit* enemy);
+        virtual void counterAttack(Unit* attacker, Unit* enemy);
 };
 
 #endif // BASEATTACK_H

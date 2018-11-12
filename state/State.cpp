@@ -20,7 +20,7 @@ const int State::getDamage() const {
 const std::string& State::getName() const {
     return *(this->name);
 }
-//WHAT TO DO IF UNIT IS DEAD?
+//WHAT TO DO IF UNIT IS DEAD? EXCEPTION?
 void State::checkIfAlive() {
     if (this->getHp() <= 0 ) {
         std::cout << this->getName() << "is dead." << std::endl;

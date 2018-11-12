@@ -19,7 +19,9 @@ class Unit {
         const int getHp() const;
         const int getDamage() const;
         const std::string& getName() const;
-        State& getState() const; 
+        State& getState() const;
+        void checkIfAlive();
+
 
         void addHp(int value);
         void takeDamage(int damage);

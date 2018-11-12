@@ -1,14 +1,14 @@
 #include <iostream>
 #include "Unit.h"
-//NEW????
+
 Unit::Unit(int hp, int damage, const std::string& name) {
     this->unit_state = new State(hp, damage, name);
     this->unit_attack = new BaseAttack();
-    std::cout << "Unit constructor(" << this->unit_state->getName() << ")" << std::endl;
+    std::cout << "Unit constructor(" << this->getName() << ", hp: "<< this->getHp() << ", dmg: " << this->getDamage() << ")" << std::endl;
 }
-
+//WHAT TO DELETE IN DESTRUCTOR??
 Unit::~Unit() {
-    std::cout << "Unit destructor(" << this->unit_state->getName() << ")" << std::endl;
+    std::cout << "Unit destructor(" << this->getName() << ")" << std::endl;
     //delete(this->name);
     //delete(this->unit_attack);
 }
@@ -33,26 +33,26 @@ State& Unit::getState() const {
     return *(this->unit_state);
 }
 
+void Unit::checkIfAlive() {
+    this->unit_state->checkIfAlive();
+}
+
 void Unit::takeDamage(int damage) {
     this->unit_state->takeDamage(damage);
+    checkIfAlive();    
 }
 
-void Unit::takeCounterAttackDamage(Unit* enemy) {
-    this->hp -= enemy->unit_state->getDamage() / 2;
+// void Unit::takeCounterAttackDamage(int damage) {
+//     this->unit_state->takeDamage(damage / 2 );
+//     checkIfAlive();
+// }
 
-    if ( this->hp < 0 ) {
-        this->hp = 0;
-    }
-}
-
-    void Unit::attack(Unit* enemy) {
+void Unit::attack(Unit* enemy) {
     this->unit_attack->attack(this, enemy);
 }
 
 void Unit::counterAttack(Unit* enemy) {
-    if ( this->hp > 0 ) {
-        enemy->takeCounterAttackDamage(this);        
-    }
+    this->unit_attack->counterAttack(this, enemy);        
 }
 
 std::ostream& operator<<(std::ostream& out, Unit& unit ){

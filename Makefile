@@ -1,8 +1,8 @@
 compile_all:
-	g++ units/unit.cpp units/soldier.cpp -c 
+	g++ units/unit.cpp attack/BaseAttack.cpp state/State.cpp -c 
 
 link_all: compile_all
-	g++ run.cpp Unit.o Soldier.o
+	g++ run.cpp *.o
 
 all: link_all
 
