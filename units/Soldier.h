@@ -6,7 +6,7 @@
 
 class Soldier : public Unit {
     public:
-        Soldier(const std::string& name="Soldier");
+        Soldier(int hp, int damage, const std::string& name);
         virtual ~Soldier();
 
 };

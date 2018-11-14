@@ -1,10 +1,10 @@
 #include <iostream>
 #include "Soldier.h"
 
-Soldier::Soldier(const std::string& name) : Unit(new State(100, 20, name), new BaseAttack()) {
+Soldier::Soldier(int hp, int damage, const std::string& name) : Unit(hp, damage, name)  {
     std::cout << "Soldier constructor(" << name << ")" << std::endl;
 }
 
 Soldier::~Soldier(){
-    std::cout << "Soldier destruntor" << std::endl;
+    std::cout << "Soldier destructor" << std::endl;
 }

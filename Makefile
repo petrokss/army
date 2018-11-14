@@ -1,5 +1,5 @@
 compile_all:
-	g++ units/unit.cpp attack/BaseAttack.cpp state/State.cpp -c 
+	g++ units/Unit.cpp attack/BaseAttack.cpp state/State.cpp units/Soldier.cpp -c 
 
 link_all: compile_all
 	g++ run.cpp *.o

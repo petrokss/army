@@ -8,8 +8,7 @@
 class BaseAttack;
 
 class Unit {
-    private:
-        int hp;
+    protected:
         BaseAttack* unit_attack;
         State* unit_state;
     public:
