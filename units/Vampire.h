@@ -5,7 +5,7 @@
 
 class Vampire : public Unit {
     public:
-        Vampire( const std::string& name="Vampire");
+        Vampire(int hp, int damage, const std::string& name="Vampire");
         virtual ~Vampire();
 
 };

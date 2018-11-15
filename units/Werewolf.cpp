@@ -1,6 +1,6 @@
 #include "Werewolf.h"
 
-Werewolf::Werewolf(const std::string& name) : Unit(70, 10, name, new BaseAttack()) {
+Werewolf::Werewolf(int hp, int damage, const std::string& name) : Unit(hp, damage, name) {
     std::cout << "Werewolf construntor" << std::endl;
 }
 

@@ -1,6 +1,6 @@
 #include "Vampire.h"
 
-Vampire::Vampire(const std::string& name) : Unit(70, 10, name, new BaseAttack()) {
+Vampire::Vampire(int hp, int damage, const std::string& name) : Unit(hp, damage, name) {
     std::cout << "Vampire construntor" << std::endl;
 }
 

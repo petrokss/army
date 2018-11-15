@@ -5,7 +5,7 @@
 
 class Rouge : public Unit {
     public:
-        Rouge( const std::string& name="Rouge");
+        Rouge( int hp, int damage, const std::string& name="Rouge");
         virtual ~Rouge();
 
 };

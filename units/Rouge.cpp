@@ -1,8 +1,7 @@
 #include "Rouge.h"
 
-Rouge::Rouge(const std::string& name) : Unit(new State(80, 15, name), new BaseAttack()) {
+Rouge::Rouge(int hp, int damage, const std::string& name) : Unit(hp, damage, name) {
     std::cout << "Rouge construntor" << std::endl;
-
 }
 Rouge::~Rouge() {
     std::cout << "Rouge destruntor" << std::endl;

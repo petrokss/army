@@ -5,8 +5,9 @@
 //can transform into wolf(more hp and damage than werewolf, but has bigger damage from spellcaster)
 class Werewolf : public Unit {
     public:
-        Werewolf( const std::string& name="Werewolf");
+        Werewolf(int hp, int damage, const std::string& name="Werewolf");
         virtual ~Werewolf();
+        //void transformationToWolf(this);
 
 };
 

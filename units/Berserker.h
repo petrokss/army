@@ -5,7 +5,7 @@
 
 class Berserker : public Unit {
     public:
-        Berserker( const std::string& name="Berserker");
+        Berserker(int hp, int damage, const std::string& name="Berserker");
         virtual ~Berserker();
 
 };
