@@ -7,7 +7,7 @@ class Werewolf : public Unit {
     public:
         Werewolf(int hp, int damage, const std::string& name="Werewolf");
         virtual ~Werewolf();
-        //void transformationToWolf(this);
+        //void transformationToWolf();
 
 };
 

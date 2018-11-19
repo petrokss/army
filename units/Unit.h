@@ -12,7 +12,7 @@ class Unit {
         BaseAttack* unit_attack;
         State* unit_state;
     public:
-        Unit(int hp, int damage, const std::string& name);
+        Unit(int hp, int damage, const std::string& name, UnitType type);
         ~Unit();
 
         const int getHp() const;

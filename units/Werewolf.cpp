@@ -7,3 +7,7 @@ Werewolf::Werewolf(int hp, int damage, const std::string& name) : Unit(hp, damag
 Werewolf::~Werewolf() {
     std::cout << "Werewolf destructor" << std::endl;
 }
+
+// void Werewolf::transformationToWolf() {
+//     this->unit_state->transformationToWolf();
+// }

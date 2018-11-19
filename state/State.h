@@ -4,21 +4,31 @@
 #include <iostream>
 #include "../exceptions.h"
 
+enum UnitType {
+    Usual,      //0
+    Vampire,    //1
+    Werewolf,   //2
+    Necromancer //3
+};
+
 class State {
     private:
         int hp;
         int hpLimit;
         int damage;
         std::string* name;
+        UnitType type;
     public:
         State(int hp,
             int damage,
-            const std::string& name);
+            const std::string& name,
+            UnitType type);
         ~State();
 
         const int getHp() const;
         const int getDamage() const;
-        const std::string& getName() const;   
+        const std::string& getName() const;
+        const UnitType gettype();   
         
         void checkIfAlive();
         void addHp(int value);

@@ -1,8 +1,8 @@
 #include <iostream>
 #include "Unit.h"
 
-Unit::Unit(int hp, int damage, const std::string& name) {
-    this->unit_state = new State(hp, damage, name);
+Unit::Unit(int hp, int damage, const std::string& name, UnitType type) {
+    this->unit_state = new State(hp, damage, name, type);
     this->unit_attack = new BaseAttack();
     std::cout << "Unit constructor(" << this->getName() << ", hp: "<< this->getHp() << ", dmg: " << this->getDamage() << ")" << std::endl;
 }

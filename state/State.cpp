@@ -1,6 +1,6 @@
 #include "State.h"
 
-State::State(int hp, int damage, const std::string& name) : hp(hp), damage(damage), name(new std::string(name)) {
+State::State(int hp, int damage, const std::string& name, UnitType type) : hp(hp), damage(damage), name(new std::string(name)), type(type) {
     std::cout << "State constructor(" << *(this->name) << ")" << std::endl;
 }
 
@@ -20,6 +20,12 @@ const int State::getDamage() const {
 const std::string& State::getName() const {
     return *(this->name);
 }
+
+const UnitType State::gettype() {
+    return this->type;
+} 
+
+
 //WHAT TO DO IF UNIT IS DEAD? EXCEPTION?
 void State::checkIfAlive() {
     if (this->getHp() <= 0 ) {
