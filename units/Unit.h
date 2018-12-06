@@ -16,10 +16,13 @@ class Unit {
         ~Unit();
 
         const int getHp() const;
+        const int getHpLimit() const;
         const int getDamage() const;
         const std::string& getName() const;
         State& getState() const;
         void checkIfAlive();
+        bool infected() const;
+
 
 
         void addHp(int value);
@@ -27,6 +30,8 @@ class Unit {
         void takeCounterAttackDamage(Unit* enemy);
         void attack(Unit* enemy);
         void counterAttack(Unit* enemy);
+
+        //void transformToWolf(Werewolf* werewolf);
 };
 
 std::ostream& operator<<(std::ostream& out, Unit& unit );

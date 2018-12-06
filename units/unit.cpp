@@ -17,6 +17,10 @@ const int Unit::getHp() const {
     return this->unit_state->getHp();
 }
 
+const int Unit::getHpLimit() const {
+    return this->unit_state->getHpLimit();
+}
+
 void Unit::addHp(int value) {
     this->unit_state->addHp(value);
 }
@@ -36,6 +40,11 @@ State& Unit::getState() const {
 void Unit::checkIfAlive() {
     this->unit_state->checkIfAlive();
 }
+
+bool Unit::infected() const {
+    return this->unit_state->infected();
+}
+
 
 void Unit::takeDamage(int damage) {
     this->unit_state->takeDamage(damage);

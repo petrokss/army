@@ -1,6 +1,6 @@
 #include "State.h"
 
-State::State(int hp, int damage, const std::string& name, UnitType type) : hp(hp), damage(damage), name(new std::string(name)), type(type) {
+State::State(int hp, int damage, const std::string& name, UnitType type) : hp(hp), hpLimit(hp), damage(damage), name(new std::string(name)), type(type), isInfected(false) {
     std::cout << "State constructor(" << *(this->name) << ")" << std::endl;
 }
 
@@ -13,6 +13,11 @@ const int State::getHp() const {
     return this->hp;
 }
 
+const int State::getHpLimit() const {
+    return this->hpLimit;
+}
+
+
 const int State::getDamage() const {
     return this->damage;
 }
@@ -24,8 +29,6 @@ const std::string& State::getName() const {
 const UnitType State::gettype() {
     return this->type;
 } 
-
-
 //WHAT TO DO IF UNIT IS DEAD? EXCEPTION?
 void State::checkIfAlive() {
     if (this->getHp() <= 0 ) {
@@ -33,6 +36,11 @@ void State::checkIfAlive() {
         throw OutOfHpException();
     }
 }
+
+// bool State::infected() const {
+//     return this->isInfected;
+// }
+
 
 void State::takeDamage(int damage) {
     this->hp -= damage;
@@ -50,6 +58,7 @@ std::ostream& operator<<(std::ostream& out, State& state ){
     out << state.getName();
     out << " [hp: " << state.getHp();
     out << ", dmg: " << state.getDamage();
+    out << ", type: " << state.gettype();
     out << "]";
     return out;
 }

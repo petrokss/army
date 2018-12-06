@@ -5,10 +5,10 @@
 #include "../exceptions.h"
 
 enum UnitType {
-    Usual,      //0
-    Vampire,    //1
-    Werewolf,   //2
-    Necromancer //3
+    USUAL,      //0
+    VAMPIRE,    //1
+    WEREWOLF,   //2
+    NECROMANCER //3
 };
 
 class State {
@@ -18,6 +18,7 @@ class State {
         int damage;
         std::string* name;
         UnitType type;
+        bool isInfected;
     public:
         State(int hp,
             int damage,
@@ -26,9 +27,11 @@ class State {
         ~State();
 
         const int getHp() const;
+        const int getHpLimit() const;
         const int getDamage() const;
         const std::string& getName() const;
-        const UnitType gettype();   
+        const UnitType gettype();
+        bool infected() const;   
         
         void checkIfAlive();
         void addHp(int value);

@@ -1,7 +1,7 @@
 #include <iostream>
 #include "Soldier.h"
 
-Soldier::Soldier(int hp, int damage, const std::string& name) : Unit(hp, damage, name, Usual)  {
+Soldier::Soldier(int hp, int damage, const std::string& name) : Unit(hp, damage, name, USUAL)  {
     std::cout << "Soldier constructor(" << name << ")" << std::endl;
 }
 
