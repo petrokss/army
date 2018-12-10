@@ -14,6 +14,10 @@ void WerewolfAttack::attack(Unit* attacker, Unit* enemy) {
     }
 }
 
-// void WerewolfAttack::bite(Werewolf* attacker, Unit* enemy) {
-//     if ( enemy->infected() )
-// }
+//add enemy's transformation into a werewolf 
+void WerewolfAttack::bite(Werewolf* attacker, Unit* enemy) {
+    if ( enemy->getIsInfected() ) {
+        enemy->beInfected();
+    }
+}
+ 

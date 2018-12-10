@@ -41,10 +41,13 @@ void Unit::checkIfAlive() {
     this->unit_state->checkIfAlive();
 }
 
-bool Unit::infected() const {
-    return this->unit_state->infected();
+bool Unit::getIsInfected() const {
+    return this->unit_state->getIsInfected();
 }
 
+void Unit::beInfected() {
+    return this->unit_state->beInfected();
+}
 
 void Unit::takeDamage(int damage) {
     this->unit_state->takeDamage(damage);

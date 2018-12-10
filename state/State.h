@@ -8,7 +8,8 @@ enum UnitType {
     USUAL,      //0
     VAMPIRE,    //1
     WEREWOLF,   //2
-    NECROMANCER //3
+    NECROMANCER,//3
+    MAGIC       //4
 };
 
 class State {
@@ -31,11 +32,12 @@ class State {
         const int getDamage() const;
         const std::string& getName() const;
         const UnitType gettype();
-        bool infected() const;   
+        bool getIsInfected() const;   
         
         void checkIfAlive();
         void addHp(int value);
         void takeDamage(int damage);
+        void beInfected();
               
 };
 

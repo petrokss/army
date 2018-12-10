@@ -6,6 +6,7 @@
 #include "../state/State.h"
 
 class BaseAttack;
+class State;
 
 class Unit {
     protected:
@@ -21,9 +22,9 @@ class Unit {
         const std::string& getName() const;
         State& getState() const;
         void checkIfAlive();
-        bool infected() const;
+        bool getIsInfected() const;
 
-
+        void beInfected();
 
         void addHp(int value);
         void takeDamage(int damage);

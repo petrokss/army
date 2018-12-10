@@ -37,9 +37,9 @@ void State::checkIfAlive() {
     }
 }
 
-// bool State::infected() const {
-//     return this->isInfected;
-// }
+bool State::getIsInfected() const {
+    return this->isInfected;
+}
 
 
 void State::takeDamage(int damage) {
@@ -53,6 +53,11 @@ void State::addHp(int value) {
         this->hp = this->hpLimit;
     }
 }
+
+void State::beInfected() {
+    this->isInfected = !this->isInfected;
+}
+
 
 std::ostream& operator<<(std::ostream& out, State& state ){
     out << state.getName();
