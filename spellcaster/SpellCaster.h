@@ -12,7 +12,7 @@ class MagicAttack;
 
 
 class SpellCaster : public Unit {
-    private: //constructor????
+    private:
         int mana;
         MagicAttack* magic_attack;
         MagicState* magic_state;
@@ -20,7 +20,12 @@ class SpellCaster : public Unit {
         SpellCaster(int hp, int mana, int damage, const std::string& name);
         ~SpellCaster();
 
-        
+        const int getMana() const;
+        const int getManaLimit() const;
+        MagicState& getMagicState() const;
+
+        void spendMana(int cost);
+        void increaseMana(int cost);
         
 };
 

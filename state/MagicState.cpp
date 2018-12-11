@@ -29,3 +29,8 @@ void MagicState::increaseMana(int cost) {
     }
 
 }
+
+std::ostream& operator<<(std::ostream& out, MagicState& magic_state ) {
+    out << "mana: [" << magic_state.getMana() << "/" << magic_state.getManaLimit() << "]";
+    return out;
+}
