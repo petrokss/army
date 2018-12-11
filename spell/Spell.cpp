@@ -14,6 +14,6 @@ int Spell::getPoint() const {
     return this->points;
 }
 
-// virtual void Spell::action(Unit* target) {
-
+// bool Spell::ifManaNeeded(int amount) {
+//     return this->getMana()
 // }

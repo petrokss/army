@@ -4,7 +4,7 @@
 #include "../units/Unit.h"
 
 class Spell {
-    private: 
+    protected: 
         int cost;
         int points;
     public:
@@ -13,6 +13,7 @@ class Spell {
 
         int getCost() const;
         int getPoint() const;
+        //bool ifManaNeeded(int amount);
 
         virtual void action(Unit* target) = 0;
 };
