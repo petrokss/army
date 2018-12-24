@@ -3,6 +3,8 @@
 
 #include "../units/Unit.h"
 
+enum spellNames {Fireball = 1, Heal};
+
 class Spell {
     protected: 
         int cost;
