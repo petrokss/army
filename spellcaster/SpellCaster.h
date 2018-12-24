@@ -2,7 +2,7 @@
 #define SPELLCASTER_H
 
 #include <iostream>
-// #include <map>
+#include <map>
 #include "../units/Unit.h"
 #include "../attack/MagicAttack.h"
 #include "../state/MagicState.h"
@@ -14,7 +14,7 @@ class SpellCaster : public Unit {
         int mana;
         MagicAttack* magic_attack;
         MagicState* magic_state;
-        // std::map<int, Spell>* spellBook;
+        std::map<spellNames, Spell>* spellBook;
     public:
         SpellCaster(int hp, int mana, int damage, const std::string& name);
         ~SpellCaster();

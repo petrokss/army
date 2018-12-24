@@ -4,7 +4,9 @@ MagicState::MagicState(int hp, int damage, const std::string& name, int mana) : 
     std::cout << "MagicState constructor" << std::endl;
 }
 
-MagicState::~MagicState() {}
+MagicState::~MagicState() {
+    std::cout << "MagicState destructor" << std::endl;
+}
 
 const int MagicState::getMana() const {
     return this->mana;

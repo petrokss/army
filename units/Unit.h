@@ -4,7 +4,7 @@
 #include <iostream>
 #include "../attack/BaseAttack.h"
 #include "../state/State.h"
-
+//is this class include needed?
 class BaseAttack;
 class State;
 

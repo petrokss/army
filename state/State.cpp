@@ -26,7 +26,7 @@ const std::string& State::getName() const {
     return *(this->name);
 }
 
-const UnitType State::gettype() {
+const UnitType State::gettype() const {
     return this->type;
 } 
 //WHAT TO DO IF UNIT IS DEAD? EXCEPTION?
@@ -46,6 +46,12 @@ void State::takeDamage(int damage) {
     this->hp -= damage;
     this->checkIfAlive();
 }
+
+void State::takeMagicDamage(int points) {
+    this->hp -= points;
+    this->checkIfAlive();
+}
+
 
 void State::addHp(int value) {
     this->hp += value;

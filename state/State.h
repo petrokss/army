@@ -31,12 +31,13 @@ class State {
         const int getHpLimit() const;
         const int getDamage() const;
         const std::string& getName() const;
-        const UnitType gettype();
+        const UnitType gettype() const;
         bool getIsInfected() const;   
         
         void checkIfAlive();
         void addHp(int value);
         void takeDamage(int damage);
+        void takeMagicDamage(int points);
         void beInfected();
               
 };
