@@ -14,7 +14,7 @@ class SpellCaster : public Unit {
         int mana;
         MagicAttack* magic_attack;
         MagicState* magic_state;
-        std::map<spellNames, Spell>* spellBook;
+        std::map<spellNames, std::unique_ptr<Spell> >* spellBook;
     public:
         SpellCaster(int hp, int mana, int damage, const std::string& name);
         ~SpellCaster();

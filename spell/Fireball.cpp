@@ -1,4 +1,4 @@
-#include " Fireball.h" //what's wronh with include?
+#include "Fireball.h" //what's wronh with include?
 
 Fireball::Fireball(int cost, int points) : Spell(cost, points) {
     std::cout << "Fireball constructor" << std::endl;
