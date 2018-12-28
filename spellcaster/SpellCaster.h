@@ -7,6 +7,7 @@
 #include "../attack/MagicAttack.h"
 #include "../state/MagicState.h"
 #include "../spell/Spell.h"
+#include <memory>
 
 
 class SpellCaster : public Unit {
@@ -14,7 +15,7 @@ class SpellCaster : public Unit {
         int mana;
         MagicAttack* magic_attack;
         MagicState* magic_state;
-        std::map<spellNames, std::unique_ptr<Spell> >* spellBook;
+        std::map<spellNames, Spell*>* spellBook;
     public:
         SpellCaster(int hp, int mana, int damage, const std::string& name);
         ~SpellCaster();
