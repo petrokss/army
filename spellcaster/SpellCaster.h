@@ -15,6 +15,7 @@ class SpellCaster : public Unit {
         int mana;
         MagicAttack* magic_attack;
         MagicState* magic_state;
+        // std::map<spellNames, std::unique_ptr<Spell> >* spellBook;
         std::map<spellNames, Spell*>* spellBook;
     public:
         SpellCaster(int hp, int mana, int damage, const std::string& name);
@@ -26,10 +27,11 @@ class SpellCaster : public Unit {
 
         void spendMana(int cost);
         void increaseMana(int cost);
+        void showSpellBook();
         
         
 };
-
+//std::ostream& operator<<(std::ostream &out, const std::map<spellNames, Spell*>& spellBook);
 //std::ostream& operator<<(std::ostream& out, SpellCaster& spellcaster );
 
 #endif // SPELLCASTER_H

@@ -4,9 +4,8 @@
 SpellCaster::SpellCaster(int hp, int mana, int damage, const std::string& name) : Unit(hp, damage, name, MAGIC) {
     this->magic_state = new MagicState(hp, damage, name, mana);
     this->magic_attack = new MagicAttack();
-    std::cout << " SpellCaster " << this->getName() << "constructor" << std::endl;
-    //this->spellBook = new std::map<spellNames, std::unique_ptr<Spell> >;
     this->spellBook = new std::map<spellNames, Spell*>;
+    std::cout << " SpellCaster " << this->getName() << "constructor" << std::endl;
 }
 
 SpellCaster::~SpellCaster() {}
@@ -14,9 +13,11 @@ SpellCaster::~SpellCaster() {}
 const int SpellCaster::getMana() const {
     return this->magic_state->getMana();
 }
+
 const int SpellCaster::getManaLimit() const {
     return this->magic_state->getManaLimit();
 }
+
 MagicState& SpellCaster::getMagicState() const {
     return *(this->magic_state);
 }
@@ -24,6 +25,28 @@ MagicState& SpellCaster::getMagicState() const {
 void SpellCaster::spendMana(int cost) {
     return this->magic_state->spendMana(cost);
 }
+
 void SpellCaster::increaseMana(int cost) {
     return this->magic_state->increaseMana(cost);
+}
+
+void SpellCaster::showSpellBook() {
+    std::cout << &spellBook << std::endl;
+}
+
+
+
+// std::ostream& operator<<(std::ostream& os, const std::map<spellNames, Spell*>& spellBook) {
+//     for (const auto &p : spellBook) {
+//         os << p.first << ": " << p.second;
+//     }
+//     return os;
+// }
+
+
+std::ostream& operator<<(std::ostream& os, const std::map<spellNames, Spell*>& spellBook) {
+    for (std::map<spellNames, Spell*>::const_iterator it = spellBook.begin(); it != spellBook.end(); it++ ) {
+        os << it->first << " " << it->second;
+    }
+    return os;
 }
