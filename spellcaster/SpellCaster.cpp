@@ -30,9 +30,9 @@ void SpellCaster::increaseMana(int cost) {
     return this->magic_state->increaseMana(cost);
 }
 
-void SpellCaster::showSpellBook() {
-    std::cout << &spellBook << std::endl;
-}
+// Book& SpellCaster::getSpellBook() const {
+//    // return *(this->spellBook);
+// }
 
 
 
@@ -44,9 +44,9 @@ void SpellCaster::showSpellBook() {
 // }
 
 
-std::ostream& operator<<(std::ostream& os, const std::map<spellNames, Spell*>& spellBook) {
-    for (std::map<spellNames, Spell*>::const_iterator it = spellBook.begin(); it != spellBook.end(); it++ ) {
-        os << it->first << " " << it->second;
-    }
-    return os;
-}
+// std::ostream& operator<<(std::ostream& os, const std::map<spellNames, Spell*>& spellBook) {
+//     for (std::map<spellNames, Spell*>::const_iterator it = spellBook.begin(); it != spellBook.end(); it++ ) {
+//         os << it->first << " " << it->second;
+//     }
+//     return os;
+// }
