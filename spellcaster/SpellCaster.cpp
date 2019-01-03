@@ -4,7 +4,8 @@
 SpellCaster::SpellCaster(int hp, int mana, int damage, const std::string& name) : Unit(hp, damage, name, MAGIC) {
     this->magic_state = new MagicState(hp, damage, name, mana);
     this->magic_attack = new MagicAttack();
-    this->spellBook = new std::map<spellNames, Spell*>;
+    //this->spellBook = new std::map<spellNames, Spell*>;
+    this->spellBook = new Book();
     std::cout << " SpellCaster " << this->getName() << "constructor" << std::endl;
 }
 

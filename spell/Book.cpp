@@ -11,9 +11,7 @@ void Book::addSpell(spellNames spellNames, Spell* newSpell) {
 
 }
 
-void Book::findSpell(spellNames spellNames, Spell* spell) {
-
-}
+Spell* Book::findSpell(spellNames spellNames) {}
 
 std::ostream& operator<<(std::ostream& os, const std::map<spellNames, Spell*>& spellBook) {
     for (std::map<spellNames, Spell*>::const_iterator it = spellBook.begin(); it != spellBook.end(); it++ ) {
