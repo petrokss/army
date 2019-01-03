@@ -5,7 +5,8 @@
 Wizzard::Wizzard(int hp, int mana, int damage, const std::string& name) : SpellCaster(hp, mana, damage, name) {
     //this->spellBook->insert(std::pair<spellNames, Spell*>(fireball, new Fireball(30, 30)));
     //this->spellBook->insert(std::pair<spellNames, Spell*>(heal, new Heal(30, 15)));
-
+    this->spellBook->addSpell(fireball, new Fireball(30, 30));
+    this->spellBook->addSpell(heal, new Heal(30, 15));
     std::cout << "Wizzard constructor" << std::endl;
 }
 Wizzard::~Wizzard() {

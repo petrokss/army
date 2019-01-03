@@ -5,12 +5,15 @@
 #include "units/Werewolf.h"
 #include "spellcaster/SpellCaster.h"
 #include "spellcaster/Wizzard.h"
+#include "spell/Book.h"
 
 
 int main() {
     Wizzard* wizzard = new Wizzard(100, 100, 20, "Vova");
     std::cout << "Spellbook: ";
-   // std::cout << wizzard->spellBook << std::endl;
+    std::cout << *wizzard << std::endl;
+    std::cout << wizzard->getMagicState() << std::endl;
+    //wizzard->getSpellBook();
 
     delete wizzard;
     return 0;

@@ -6,7 +6,7 @@ SpellCaster::SpellCaster(int hp, int mana, int damage, const std::string& name) 
     this->magic_attack = new MagicAttack();
     //this->spellBook = new std::map<spellNames, Spell*>;
     this->spellBook = new Book();
-    std::cout << " SpellCaster " << this->getName() << "constructor" << std::endl;
+    std::cout << " SpellCaster [" << this->getName() << "] constructor" << std::endl;
 }
 
 SpellCaster::~SpellCaster() {}
@@ -31,9 +31,22 @@ void SpellCaster::increaseMana(int cost) {
     return this->magic_state->increaseMana(cost);
 }
 
-// Book& SpellCaster::getSpellBook() const {
-//    // return *(this->spellBook);
+Book& SpellCaster::getSpellBook() const {
+   return *(this->spellBook);
+}
+
+// Book& SpellCaster::showSpellBook() {
+//     std::cout << *spellBook << std::endl;
 // }
+
+std::ostream& operator<<(std::ostream& out, SpellCaster& spellcaster ) {
+    out << spellcaster.getName();
+    out << " [hp: " << spellcaster.getHp();
+    out << ", dmg: " << spellcaster.getDamage();
+    out << ", mana: " << spellcaster.getMana();
+    out << "]";
+    return out;
+}
 
 
 

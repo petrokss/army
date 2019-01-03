@@ -7,7 +7,7 @@
 #include "../attack/MagicAttack.h"
 #include "../state/MagicState.h"
 #include "../spell/Spell.h"
-#include <memory>
+//#include <memory>
 #include "../spell/Book.h"
 
 class SpellCaster : public Unit {
@@ -29,11 +29,10 @@ class SpellCaster : public Unit {
 
         void spendMana(int cost);
         void increaseMana(int cost);
-        void showSpellBook();
+        //Book& showSpellBook();
         
         
 };
-//std::ostream& operator<<(std::ostream &out, const std::map<spellNames, Spell*>& spellBook);
-//std::ostream& operator<<(std::ostream& out, SpellCaster& spellcaster );
+std::ostream& operator<<(std::ostream& out, SpellCaster& spellcaster );
 
 #endif // SPELLCASTER_H
