@@ -6,6 +6,8 @@
 #include "../units/Unit.h"
 #include "../units/Rouge.h"
 
+class Rouge;
+
 class RougeAttack : public BaseAttack {
     public:
         RougeAttack();

@@ -2,6 +2,9 @@
 #define ROUGE_H
 
 #include "Unit.h"
+#include "../attack/RougeAttack.h"
+
+class RougeAttack;
 
 class Rouge : public Unit {
     public:

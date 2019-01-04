@@ -4,6 +4,7 @@
 #include "units/Berserker.h"
 #include "units/Werewolf.h"
 #include "units/Rouge.h"
+#include "units/Vampire.h"
 #include "attack/BaseAttack.h"
 #include "attack/RougeAttack.h"
 #include "spellcaster/SpellCaster.h"

@@ -14,4 +14,5 @@ void VampireAttack::attack(Unit* attacker, Unit* enemy) {
         enemy->counterAttack(attacker);
         attacker->addHp(enemy->getHp() / 4);
     }
+    std::cout << "----Vampire----attack----" << std::endl;
 }
