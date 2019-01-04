@@ -29,7 +29,7 @@ Spell* Book::findSpell(spellNames spellName) {
 }
 // it->second returns adress, but doesn't overload Book& output. 
 std::ostream& operator<<(std::ostream& os, const Book& spellBook) {
-    for (std::map<spellNames, Spell*>::const_iterator it = spellBook.spellBook->begin() ; it != spellBook.spellBook->end(); it++ ) {
+    for (std::map<spellNames, Spell*>::const_iterator it = spellBook.spellBook->begin(); it != spellBook.spellBook->end(); it++ ) {
         os << it->first << " " << it->second << ";";
     }
     return os;

@@ -20,6 +20,7 @@ void MagicState::spendMana(int cost) {
 
     if ( manaNeeded <= 0 ) {
         this->mana = 0;
+        throw OutOfManaException();
     }
     this->mana = manaNeeded;
 }

@@ -3,7 +3,9 @@
 Spell::Spell(int cost, int points) : cost(cost), points(points) {
     std::cout << "Spell constructor" << std::endl;
 }
+//how to delete spells correctly?
 Spell::~Spell() {
+    //delete this;
     std::cout << "Spell destructor" << std::endl;
 }
 

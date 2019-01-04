@@ -9,13 +9,28 @@
 
 
 int main() {
-    Wizzard* wizzard = new Wizzard(100, 100, 20, "Vova");
-    std::cout << "Spellbook: ";
-    std::cout << *wizzard << std::endl;
-    std::cout << wizzard->getSpellBook() << std::endl;
-    //wizzard->getSpellBook();
+    Wizzard* wiz1 = new Wizzard(100, 100, 20, "Vova");
+    Wizzard* wiz2 = new Wizzard(100, 100, 20, "Petya");
+    std::cout << *wiz1 << std::endl;
+    std::cout << *wiz2 << std::endl;
 
-    delete wizzard;
+    wiz1->cast(wiz2, fireball);
+    std::cout << "---after cast----" << std::endl;
+    
+    std::cout << *wiz1 << std::endl;
+    std::cout << *wiz2 << std::endl;
+    wiz1->cast(wiz2, heal);
+    std::cout << "---after heal----" << std::endl;
+    std::cout << *wiz1 << std::endl;
+    std::cout << *wiz2 << std::endl;
+    wiz1->cast(wiz2, heal);
+    std::cout << "---after heal----" << std::endl;
+    std::cout << *wiz1 << std::endl;
+    std::cout << *wiz2 << std::endl;
+    wiz1->cast(wiz2, fireball);
+
+    delete wiz1;
+    delete wiz2;
     return 0;
 }
 

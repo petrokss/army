@@ -4,16 +4,18 @@
 #include <iostream>
 #include <map>
 #include "../units/Unit.h"
-//#include "../attack/MagicAttack.h"
+#include "../attack/MagicAttack.h"
 #include "../state/MagicState.h"
 #include "../spell/Spell.h"
 //#include <memory>
 #include "../spell/Book.h"
 
+class MagicAttack;
+
 class SpellCaster : public Unit {
     protected:
         int mana;
-        //MagicAttack* magic_attack;
+        MagicAttack* magic_attack;
         MagicState* magic_state;
         //std::map<spellNames, Spell*>* spellBook;
         Book* spellBook;
@@ -29,10 +31,9 @@ class SpellCaster : public Unit {
 
         void spendMana(int cost);
         void increaseMana(int cost);
-        Spell& findSpell(spellNames spellName);
-        //Book& showSpellBook();
-        
-        
+        Spell* findSpell(spellNames spellName);
+
+        void cast(Unit* enemy, spellNames spellName);
 };
 std::ostream& operator<<(std::ostream& out, SpellCaster& spellcaster );
 
