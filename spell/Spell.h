@@ -23,4 +23,8 @@ class Spell {
         virtual void action(Unit* target) = 0;
 };
 
+std::ostream& operator<<(std::ostream& os, const Spell& spell);
+
+
+
 #endif // SPELL_H

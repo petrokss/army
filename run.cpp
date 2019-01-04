@@ -12,7 +12,7 @@ int main() {
     Wizzard* wizzard = new Wizzard(100, 100, 20, "Vova");
     std::cout << "Spellbook: ";
     std::cout << *wizzard << std::endl;
-    std::cout << wizzard->getMagicState() << std::endl;
+    std::cout << wizzard->getSpellBook() << std::endl;
     //wizzard->getSpellBook();
 
     delete wizzard;

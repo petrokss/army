@@ -14,8 +14,9 @@ class Book {
 
         void addSpell(spellNames spellNames, Spell* newSpell);
         Spell* findSpell(Book* spellBoook, spellNames spellNames);
+
+friend std::ostream& operator<<(std::ostream& os, const Book& spellBook);
 };
 
-std::ostream& operator<<(std::ostream& os, const std::map<spellNames, Spell*>& spellBook);
 
 #endif // BOOK_H

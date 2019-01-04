@@ -3,16 +3,16 @@
 
 #include <iostream>
 #include "../units/Unit.h"
+#include "../spell/Spell.h"
+#include "../spellcaster/SpellCaster.h"
 
-class Unit;
 
-
-class MagicAttack {
+class MagicAttack : public BaseAttack {
     public:
         MagicAttack();
         virtual ~MagicAttack();
         
-        void action(Unit* target);
+        //void cast(SpellCaster* attacker, Unit* target, Spell* spell);
 };
 
 #endif // MAGICATTACK_H

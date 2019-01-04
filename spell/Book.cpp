@@ -27,10 +27,10 @@ Spell* Book::findSpell(Book* spellBoook, spellNames spellName) {
     std::cout << " There isn't such spell" << std::endl;
     return 0;
 }
-
-std::ostream& operator<<(std::ostream& os, const std::map<spellNames, Spell*>& spellBook) {
-    for (std::map<spellNames, Spell*>::const_iterator it = spellBook.begin(); it != spellBook.end(); it++ ) {
-        os << it->first << " " << it->second;
+// it->second returns adress, but doesn't overload Book& output. 
+std::ostream& operator<<(std::ostream& os, const Book& spellBook) {
+    for (std::map<spellNames, Spell*>::const_iterator it = spellBook.spellBook->begin() ; it != spellBook.spellBook->end(); it++ ) {
+        os << it->first << " " << it->second << ";";
     }
     return os;
 }

@@ -3,7 +3,7 @@
 //In spellcaster constructor is called twice: in Unit constr and in magic_state - the same parameters - is it OK?
 SpellCaster::SpellCaster(int hp, int mana, int damage, const std::string& name) : Unit(hp, damage, name, MAGIC) {
     this->magic_state = new MagicState(hp, damage, name, mana);
-    this->magic_attack = new MagicAttack();
+    //this->magic_attack = new MagicAttack();
     //this->spellBook = new std::map<spellNames, Spell*>;
     this->spellBook = new Book();
     std::cout << " SpellCaster [" << this->getName() << "] constructor" << std::endl;
@@ -36,7 +36,7 @@ Book& SpellCaster::getSpellBook() const {
 }
 
 // Book& SpellCaster::showSpellBook() {
-//     std::cout << *spellBook << std::endl;
+//     std::cout << getSpellBook() << std::endl;
 // }
 
 std::ostream& operator<<(std::ostream& out, SpellCaster& spellcaster ) {
