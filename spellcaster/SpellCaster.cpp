@@ -35,6 +35,11 @@ Book& SpellCaster::getSpellBook() const {
    return *(this->spellBook);
 }
 
+// Spell& SpellCaster::findSpell(spellNames spellName) {
+//     return spellBook->findSpell(spellName);
+// }
+
+
 // Book& SpellCaster::showSpellBook() {
 //     std::cout << getSpellBook() << std::endl;
 // }

@@ -7,6 +7,6 @@ MagicAttack::~MagicAttack() {
     std::cout << "MagicAttack destructor"<< std::endl;
 }
 
-// void MagicAttack::cast(SpellCaster* attacker, Unit* target, SpellNames spellName,Spell* spell) {
-//     attacker->getSpellBook()->findSpell(attacker->getSpellBook(), spellName);
+// void MagicAttack::cast(SpellCaster* attacker, Unit* target, spellNames spellName, Spell* spell) {
+//     attacker->;
 // }

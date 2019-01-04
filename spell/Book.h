@@ -13,7 +13,7 @@ class Book {
         ~Book();
 
         void addSpell(spellNames spellNames, Spell* newSpell);
-        Spell* findSpell(Book* spellBoook, spellNames spellNames);
+        Spell* findSpell(spellNames spellNames);
 
 friend std::ostream& operator<<(std::ostream& os, const Book& spellBook);
 };

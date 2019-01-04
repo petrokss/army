@@ -29,7 +29,8 @@ class SpellCaster : public Unit {
 
         void spendMana(int cost);
         void increaseMana(int cost);
-        Book& showSpellBook();
+        Spell& findSpell(spellNames spellName);
+        //Book& showSpellBook();
         
         
 };

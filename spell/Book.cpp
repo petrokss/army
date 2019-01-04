@@ -10,7 +10,7 @@ Book::~Book() {
 }
 //13 line works?
 void Book::addSpell(spellNames spellName, Spell* newSpell) {
-    if ( findSpell(this, spellName) != 0 ) {
+    if ( findSpell(spellName) != 0 ) {
         std::cout << "Book has such spell" << std::endl;
     } else {
         std::cout << "insert: " << spellName << std::endl;
@@ -18,7 +18,7 @@ void Book::addSpell(spellNames spellName, Spell* newSpell) {
     }
 }
 
-Spell* Book::findSpell(Book* spellBoook, spellNames spellName) {
+Spell* Book::findSpell(spellNames spellName) {
     std::map<spellNames, Spell*>::iterator it = spellBook->find(spellName);
     if ( it != spellBook->end() ) {
         std::cout << " Book has such spell: " << it->second << std::endl;

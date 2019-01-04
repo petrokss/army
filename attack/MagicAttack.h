@@ -12,7 +12,7 @@ class MagicAttack : public BaseAttack {
         MagicAttack();
         virtual ~MagicAttack();
         
-        //void cast(SpellCaster* attacker, Unit* target, Spell* spell);
+        void cast(SpellCaster* attacker, Unit* target, spellNames spellName, Spell* spell);
 };
 
 #endif // MAGICATTACK_H
