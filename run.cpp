@@ -1,8 +1,11 @@
 #include <iostream>
 #include "units/Unit.h"
 #include "units/Soldier.h"
-#include "attack/BaseAttack.h"
+#include "units/Berserker.h"
 #include "units/Werewolf.h"
+#include "units/Rouge.h"
+#include "attack/BaseAttack.h"
+#include "attack/RougeAttack.h"
 #include "spellcaster/SpellCaster.h"
 #include "spellcaster/Wizzard.h"
 #include "spell/Book.h"
@@ -10,27 +13,27 @@
 
 int main() {
     Wizzard* wiz1 = new Wizzard(100, 100, 20, "Vova");
-    Wizzard* wiz2 = new Wizzard(100, 100, 20, "Petya");
+    Rouge* ber = new Rouge(100, 20, "Petya");
     std::cout << *wiz1 << std::endl;
-    std::cout << *wiz2 << std::endl;
+    std::cout << *ber << std::endl;
 
-    wiz1->cast(wiz2, fireball);
+    ber->attack(wiz1);
     std::cout << "---after cast----" << std::endl;
     
-    std::cout << *wiz1 << std::endl;
-    std::cout << *wiz2 << std::endl;
-    wiz1->cast(wiz2, heal);
-    std::cout << "---after heal----" << std::endl;
-    std::cout << *wiz1 << std::endl;
-    std::cout << *wiz2 << std::endl;
-    wiz1->cast(wiz2, heal);
-    std::cout << "---after heal----" << std::endl;
-    std::cout << *wiz1 << std::endl;
-    std::cout << *wiz2 << std::endl;
-    wiz1->cast(wiz2, fireball);
+    // std::cout << *wiz1 << std::endl;
+    // std::cout << *wiz2 << std::endl;
+    // wiz1->cast(wiz2, heal);
+    // std::cout << "---after heal----" << std::endl;
+    // std::cout << *wiz1 << std::endl;
+    // std::cout << *wiz2 << std::endl;
+    // wiz1->cast(wiz2, heal);
+    // std::cout << "---after heal----" << std::endl;
+    // std::cout << *wiz1 << std::endl;
+    // std::cout << *wiz2 << std::endl;
+    // wiz1->cast(wiz2, fireball);
 
     delete wiz1;
-    delete wiz2;
+    delete ber;
     return 0;
 }
 

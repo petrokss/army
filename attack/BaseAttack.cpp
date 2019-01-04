@@ -16,9 +16,8 @@ void BaseAttack::attack(Unit* attacker, Unit* enemy) {
         enemy->counterAttack(attacker);
         std::cout << "after counterattack: [attacker: "<< attacker->getName() << ", hp: " << attacker->getHp() << ", dmg: " << attacker->getDamage() << std::endl;
         std::cout << "after counterattack: [enemy: "<< enemy->getName() << ", hp: " << enemy->getHp() << ", dmg: " << enemy->getDamage() << std::endl;
-
-
     }
+    std::cout << "Base---Attack" << std::endl;
 }
 
 void BaseAttack::counterAttack(Unit* attacker, Unit* enemy) {

@@ -45,6 +45,11 @@ bool Unit::getIsInfected() const {
     return this->unit_state->getIsInfected();
 }
 
+const UnitType Unit::gettype() const {
+    return this->unit_state->gettype();
+}
+
+
 void Unit::beInfected() {
     return this->unit_state->beInfected();
 }

@@ -1,14 +1,15 @@
-#include "RogueAttack.h"
+#include "RougeAttack.h"
 
-RogueAttack::RogueAttack() {
+RougeAttack::RougeAttack() {
     std::cout << "RogueAttack constructor" << std::endl;
 }
-RogueAttack::~RogueAttack() {
+RougeAttack::~RougeAttack() {
     std::cout << "RogueAttack destructor" << std::endl;
 }
 //rogue can't be counterattacked
-void RogueAttack::attack(Unit* attacker, Unit* enemy) {
+void RougeAttack::attack(Rouge* attacker, Unit* enemy) {
     if ( enemy->getHp() > 0 ) {
         enemy->takeDamage(attacker->getDamage());
     }
+    std::cout << "Rogue---Attack" << std::endl;
 }

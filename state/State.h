@@ -6,10 +6,11 @@
 
 enum UnitType {
     USUAL,      //0
-    VAMPIRE,    //1
-    WEREWOLF,   //2
-    NECROMANCER,//3
-    MAGIC       //4
+    BERSERKER,  //1
+    VAMPIRE,    //2
+    WEREWOLF,   //3
+    NECROMANCER,//4
+    MAGIC       //5
 };
 
 class State {

@@ -23,6 +23,7 @@ class Unit {
         State& getState() const;
         void checkIfAlive();
         bool getIsInfected() const;
+        const UnitType gettype() const;
 
         void beInfected();
 
