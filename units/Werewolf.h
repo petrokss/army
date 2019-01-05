@@ -2,6 +2,8 @@
 #define WEREWOLF_H
 
 #include "Unit.h"
+#include "../attack/WerewolfAttack.h"
+
 //can transform into wolf(more hp and damage than werewolf, but has bigger damage from spellcaster)
 class Werewolf : public Unit {
     private:

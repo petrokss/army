@@ -2,6 +2,7 @@
 #include "Soldier.h"
 
 Soldier::Soldier(int hp, int damage, const std::string& name) : Unit(hp, damage, name, USUAL)  {
+    this->unit_attack = new BaseAttack();
     std::cout << "Soldier constructor(" << name << ")" << std::endl;
 }
 

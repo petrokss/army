@@ -1,9 +1,10 @@
 #include "Werewolf.h"
 
 Werewolf::Werewolf(int hp, int damage, const std::string& name) : Unit(hp, damage, name, WEREWOLF) {
-    std::cout << "Werewolf construntor" << std::endl;
+    this->unit_attack = new WerewolfAttack();
     this->wolf_state = NULL;
     this->human_state = this->unit_state;
+    std::cout << "Werewolf construntor" << std::endl;
 }
 
 Werewolf::~Werewolf() {

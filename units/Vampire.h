@@ -2,6 +2,7 @@
 #define VAMPIRE_H
 
 #include "Unit.h"
+#include "../attack/VampireAttack.h"
 
 class Vampire : public Unit {
     public:

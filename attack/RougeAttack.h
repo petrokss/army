@@ -13,7 +13,7 @@ class RougeAttack : public BaseAttack {
         RougeAttack();
         virtual ~RougeAttack();
         
-        void attack(Rouge* attacker, Unit* enemy);
+        virtual void attack(Rouge* attacker, Unit* enemy);
 };
 
 #endif // ROUGEATTACK_H
