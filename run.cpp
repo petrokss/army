@@ -20,9 +20,9 @@ int main() {
     Vampire* vamp = new Vampire(100, 20, "Vamp");
 
     vamp->bite(sol);
-    if ( sol->getIsInfected() == true ) {
-        std::cout << "soldier is infected" << std::endl;
-    }
+
+    std::cout << *sol << std::endl;
+    //sol->vampire_attack->bite(sol2);
 
     delete vamp;
     delete sol;

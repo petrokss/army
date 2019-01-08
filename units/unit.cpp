@@ -1,5 +1,7 @@
 #include <iostream>
 #include "Unit.h"
+#include "../attack/WerewolfAttack.h"
+#include "../attack/VampireAttack.h"
 
 Unit::Unit(int hp, int damage, const std::string& name, UnitType type) {
     this->unit_state = new State(hp, damage, name, type);

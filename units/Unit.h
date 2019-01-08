@@ -4,8 +4,6 @@
 #include <iostream>
 #include "../attack/BaseAttack.h"
 #include "../state/State.h"
-#include "Werewolf.h"
-#include "Vampire.h"
 
 //is this class include needed?
 class BaseAttack;

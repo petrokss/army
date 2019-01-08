@@ -6,7 +6,7 @@
 #include "../units/Unit.h"
 #include "../units/Vampire.h"
 
-class Unit;
+class Vampire;
 
 class VampireAttack : public BaseAttack {
     public:

@@ -70,6 +70,11 @@ std::ostream& operator<<(std::ostream& out, State& state ){
     out << " [hp: " << state.getHp();
     out << ", dmg: " << state.getDamage();
     out << ", type: " << state.gettype();
+    if ( state.getIsInfected() == false ) {
+        out << ", is not infected";
+    } else {
+        out << ", is infected";
+    }
     out << "]";
     return out;
 }

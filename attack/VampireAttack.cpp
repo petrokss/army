@@ -21,9 +21,9 @@ void VampireAttack::bite(Unit* attacker, Unit* enemy) {
     if ( enemy->gettype() == WEREWOLF || enemy->gettype() == VAMPIRE ) {
         std::cout << "You can't bite Werewolf or Vampire " << std::endl;
     } else if ( enemy->getIsInfected() == true ) {
-        std::cout << "You can't bite, the unit is onfected" << std::endl;
+        std::cout << "You can't bite, the unit is infected" << std::endl;
     } else {
-        if ( enemy->getIsInfected() ) {
+        if ( enemy->getIsInfected() == false ) {
             enemy->beInfected();
         }
         enemy->transformToVampire();
