@@ -4,11 +4,14 @@
 #include "Unit.h"
 #include "../attack/WerewolfAttack.h"
 
+class WerewolfAttack;
+
 //can transform into wolf(more hp and damage than werewolf, but has bigger damage from spellcaster)
 class Werewolf : public Unit {
     private:
         State* wolf_state;
         State* human_state;
+        WerewolfAttack* werewolf_attack;
     public:
         Werewolf(int hp, int damage, const std::string& name="Werewolf");
         virtual ~Werewolf();
@@ -18,6 +21,8 @@ class Werewolf : public Unit {
 
         void turnIntoWolf();
         void turnIntoWerewolf();
+
+        void bite(Unit* attacker, Unit* enemy);
 
 };
 

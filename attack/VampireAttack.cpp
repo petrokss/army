@@ -16,3 +16,16 @@ void VampireAttack::attack(Unit* attacker, Unit* enemy) {
     }
     std::cout << "----Vampire----attack----" << std::endl;
 }
+
+void VampireAttack::bite(Unit* attacker, Unit* enemy) {
+    if ( enemy->gettype() == WEREWOLF || enemy->gettype() == VAMPIRE ) {
+        std::cout << "You can't bite Werewolf or Vampire " << std::endl;
+    } else if ( enemy->getIsInfected() == true ) {
+        std::cout << "You can't bite, the unit is onfected" << std::endl;
+    } else {
+        if ( enemy->getIsInfected() ) {
+            enemy->beInfected();
+        }
+        enemy->transformToVampire();
+    }
+}

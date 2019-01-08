@@ -6,13 +6,15 @@
 #include "../units/Unit.h"
 #include "../units/Werewolf.h"
 
+class Werewolf;
+
 class WerewolfAttack : public BaseAttack {
     public:
         WerewolfAttack();
         virtual ~WerewolfAttack();
         
         virtual void attack(Unit* attacker, Unit* enemy);
-        //void bite(Werewolf* attacker, Unit* enemy);
+        void bite(Unit* attacker, Unit* enemy);
 };
 
 #endif // WEREWOLFATTACK_H

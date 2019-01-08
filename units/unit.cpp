@@ -59,6 +59,19 @@ void Unit::takeDamage(int damage) {
     checkIfAlive();    
 }
 
+void Unit::transformToWerewolf() {
+    //delete this->unit_state;
+    delete this->unit_attack;
+    this->unit_attack = new WerewolfAttack();
+}
+
+void Unit::transformToVampire() {
+    delete this->unit_attack;
+    this->unit_attack = new VampireAttack();
+}
+
+
+
 // void Unit::takeCounterAttackDamage(int damage) {
 //     this->unit_state->takeDamage(damage / 2 );
 //     checkIfAlive();

@@ -7,34 +7,26 @@
 #include "units/Vampire.h"
 #include "attack/BaseAttack.h"
 #include "attack/RougeAttack.h"
+#include "attack/VampireAttack.h"
+#include "attack/WerewolfAttack.h"
 #include "spellcaster/SpellCaster.h"
 #include "spellcaster/Wizzard.h"
 #include "spell/Book.h"
 
 
 int main() {
-    Wizzard* wiz1 = new Wizzard(100, 100, 20, "Vova");
-    Rouge* ber = new Rouge(100, 20, "Petya");
-    std::cout << *wiz1 << std::endl;
-    std::cout << *ber << std::endl;
+    Soldier* sol = new Soldier(100, 20, "Vasya");
+    Soldier* sol2 = new Soldier(100, 20, "Yeti");
+    Vampire* vamp = new Vampire(100, 20, "Vamp");
 
-    ber->attack(wiz1);
-    std::cout << "---after cast----" << std::endl;
-    
-    // std::cout << *wiz1 << std::endl;
-    // std::cout << *wiz2 << std::endl;
-    // wiz1->cast(wiz2, heal);
-    // std::cout << "---after heal----" << std::endl;
-    // std::cout << *wiz1 << std::endl;
-    // std::cout << *wiz2 << std::endl;
-    // wiz1->cast(wiz2, heal);
-    // std::cout << "---after heal----" << std::endl;
-    // std::cout << *wiz1 << std::endl;
-    // std::cout << *wiz2 << std::endl;
-    // wiz1->cast(wiz2, fireball);
+    vamp->bite(sol);
+    if ( sol->getIsInfected() == true ) {
+        std::cout << "soldier is infected" << std::endl;
+    }
 
-    delete wiz1;
-    delete ber;
+    delete vamp;
+    delete sol;
+    delete sol2;
     return 0;
 }
 

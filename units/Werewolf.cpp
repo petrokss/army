@@ -2,6 +2,7 @@
 
 Werewolf::Werewolf(int hp, int damage, const std::string& name) : Unit(hp, damage, name, WEREWOLF) {
     this->unit_attack = new WerewolfAttack();
+    this->werewolf_attack = new WerewolfAttack();
     this->wolf_state = NULL;
     this->human_state = this->unit_state;
     std::cout << "Werewolf construntor" << std::endl;
@@ -40,3 +41,8 @@ void Werewolf::turnIntoWerewolf() {
         std::cout << "You're a Werewolf now" << std::endl;
     }
 }
+
+void Werewolf::bite(Unit* attacker, Unit* enemy){
+    this->werewolf_attack->bite(this, enemy);
+}
+
