@@ -25,13 +25,15 @@ void PriestAttack::cast(SpellCaster* attacker, Unit* target, spellNames spellNam
     } else {
         Spell* spell = attacker->findSpell(spellName);  
         if ( spell != 0 ) {
-            if ( target->gettype() == VAMPIRE || target->gettype() == NECROMANCER ) {
-                spell->action(target);
-                spell->action(target);
-                attacker->spendMana(spell->getCost());
-            } else {
-                spell->action(target);
-                attacker->spendMana(spell->getCost());
+            if ( attacker->getMana() >= spell->getCost() ) {
+                if ( target->gettype() == VAMPIRE || target->gettype() == NECROMANCER ) {
+                    spell->action(target);
+                    spell->action(target);
+                    attacker->spendMana(spell->getCost());
+                } else {
+                    spell->action(target);
+                    attacker->spendMana(spell->getCost());
+                }
             }
         } 
     }

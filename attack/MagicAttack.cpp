@@ -14,8 +14,12 @@ void MagicAttack::cast(SpellCaster* attacker, Unit* target, spellNames spellName
     } else {
         Spell* spell = attacker->findSpell(spellName);
         if ( spell != 0 ) {
-            spell->action(target);
-            attacker->spendMana(spell->getCost());
+            if ( attacker->getMana() >= spell->getCost() ) {
+                spell->action(target);
+                attacker->spendMana(spell->getCost());
+            } else {
+                std::cout << "Increase mana to cast this spell" << std::endl;
+            }
         } 
     }
     std::cout << "MagicAttack cast"<< std::endl;

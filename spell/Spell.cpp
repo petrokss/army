@@ -16,9 +16,9 @@ int Spell::getPoint() const {
     return this->points;
 }
 
-std::ostream& operator<<(std::ostream& os, const Spell& spell) {
-    return os << "New spell";
-}
+// std::ostream& operator<<(std::ostream& os, const Spell& spell) {
+//     return os << "New spell";
+// }
 
 
 // bool Spell::ifManaNeeded(int amount) {
