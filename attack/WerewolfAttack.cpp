@@ -15,7 +15,7 @@ void WerewolfAttack::attack(Unit* attacker, Unit* enemy) {
 }
 
 //add enemy's transformation into a werewolf 
-void WerewolfAttack::bite(Unit* attacker, Unit* enemy) {
+void WerewolfAttack::ability(Unit* attacker, Unit* enemy) {
     if ( enemy->gettype() == WEREWOLF || enemy->gettype() == VAMPIRE ) {
         std::cout << "You can't bite Werewolf or Vampire " << std::endl;
     } else {

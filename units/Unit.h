@@ -37,6 +37,7 @@ class Unit {
 
         void transformToWerewolf();
         void transformToVampire();
+        void ability(Unit* enemy);
 };
 
 std::ostream& operator<<(std::ostream& out, Unit& unit );

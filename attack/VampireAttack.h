@@ -14,7 +14,7 @@ class VampireAttack : public BaseAttack {
         virtual ~VampireAttack();
         
         virtual void attack(Unit* attacker, Unit* enemy);
-        void bite(Unit* attacker, Unit* enemy);
+        void ability(Unit* attacker, Unit* enemy);
 };
 
 #endif // VAMPIREATTACK_H

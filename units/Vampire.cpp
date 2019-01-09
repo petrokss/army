@@ -10,6 +10,6 @@ Vampire::~Vampire() {
     std::cout << "Vampire destructor" << std::endl;
 }
 
-void Vampire::bite(Unit* target) {
-    this->vampire_attack->bite(this, target);
+void Vampire::ability(Unit* target) {
+    this->vampire_attack->ability(this, target);
 }

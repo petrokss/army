@@ -72,6 +72,11 @@ void Unit::transformToVampire() {
     this->unit_attack = new VampireAttack();
 }
 
+void Unit::ability(Unit* enemy) {
+    this->unit_attack->ability(enemy);
+}
+
+
 
 
 // void Unit::takeCounterAttackDamage(int damage) {

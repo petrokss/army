@@ -25,3 +25,6 @@ void BaseAttack::counterAttack(Unit* attacker, Unit* enemy) {
         enemy->takeDamage(attacker->getDamage() / 2);
     }
 }
+
+void BaseAttack::ability(Unit* enemy) {}
+

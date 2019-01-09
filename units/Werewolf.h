@@ -22,7 +22,7 @@ class Werewolf : public Unit {
         void turnIntoWolf();
         void turnIntoWerewolf();
 
-        void bite(Unit* attacker, Unit* enemy);
+        void ability(Unit* enemy);
 
 };
 

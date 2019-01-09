@@ -19,9 +19,12 @@ int main() {
     Soldier* sol2 = new Soldier(100, 20, "Yeti");
     Vampire* vamp = new Vampire(100, 20, "Vamp");
 
-    vamp->bite(sol);
+    vamp->ability(sol);
 
     std::cout << *sol << std::endl;
+
+    sol->ability(sol2);
+    std::cout << *sol2 << std::endl;
     //sol->vampire_attack->bite(sol2);
 
     delete vamp;

@@ -42,7 +42,7 @@ void Werewolf::turnIntoWerewolf() {
     }
 }
 
-void Werewolf::bite(Unit* attacker, Unit* enemy){
-    this->werewolf_attack->bite(this, enemy);
+void Werewolf::ability(Unit* enemy){
+    this->werewolf_attack->ability(this, enemy);
 }
 

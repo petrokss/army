@@ -13,7 +13,7 @@ class Vampire : public Unit {
         Vampire(int hp, int damage, const std::string& name="Vampire");
         virtual ~Vampire();
 
-        void bite(Unit* target);
+        void ability(Unit* target);
 };
 
 #endif //VAMPIRE_H

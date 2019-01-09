@@ -14,7 +14,7 @@ class WerewolfAttack : public BaseAttack {
         virtual ~WerewolfAttack();
         
         virtual void attack(Unit* attacker, Unit* enemy);
-        void bite(Unit* attacker, Unit* enemy);
+        void ability(Unit* attacker, Unit* enemy);
 };
 
 #endif // WEREWOLFATTACK_H
