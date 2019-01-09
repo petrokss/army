@@ -3,6 +3,9 @@
 
 #include <iostream>
 #include "SpellCaster.h"
+#include "../spell/Spell.h"
+#include "../spell/Fireball.h"
+#include "../spell/Heal.h"
 
 class Healer : public SpellCaster {
     public:
