@@ -16,32 +16,11 @@
 
 
 int main() {
-    Soldier* sol = new Soldier(100, 20, "Vasya");
-    //Soldier* sol2 = new Soldier(100, 20, "Yeti");
-    Vampire* vamp = new Vampire(100, 20, "Vamp");
-    Priest* pr = new Priest(100, 100, 20, "Filariot");
+    // Soldier* sol = new Soldier(100, 20, "Vasya");
+    // Soldier* sol2 = new Soldier(100, 20, "Yeti");
+    // Vampire* vamp = new Vampire(100, 20, "Vamp");
+    //Priest* pr = new Priest(100, 100, 20, "Filariot");
 
-    // pr->cast(sol, fireball);
-    // pr->cast(vamp, fireball);
-    pr->attack(sol);
-    pr->attack(vamp);
-
-    std::cout << *sol << std::endl;
-    std::cout << *vamp << std::endl;
-
-
-
-    // vamp->ability(sol);
-
-    // std::cout << *sol << std::endl;
-
-    // sol->ability(sol2);
-    // std::cout << *sol2 << std::endl;
-    //sol->vampire_attack->bite(sol2);
-
-    delete vamp;
-    // delete sol;
-    // delete sol2;
     return 0;
 }
 

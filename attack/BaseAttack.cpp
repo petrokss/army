@@ -26,5 +26,5 @@ void BaseAttack::counterAttack(Unit* attacker, Unit* enemy) {
     }
 }
 
-void BaseAttack::ability(Unit* enemy) {}
+void BaseAttack::ability(Unit* attacker, Unit* enemy) {}
 

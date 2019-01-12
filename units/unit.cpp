@@ -73,7 +73,7 @@ void Unit::transformToVampire() {
 }
 
 void Unit::ability(Unit* enemy) {
-    this->unit_attack->ability(enemy);
+    this->unit_attack->ability(this, enemy);
 }
 
 
