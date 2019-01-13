@@ -4,12 +4,12 @@
 #include <iostream>
 #include "../attack/BaseAttack.h"
 #include "../state/State.h"
+#include "../interface/Observable.h"
 
-//is this class include needed?
 class BaseAttack;
 class State;
 
-class Unit {
+class Unit : public Observable {
     protected:
         BaseAttack* unit_attack;
         State* unit_state;
