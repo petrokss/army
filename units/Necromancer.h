@@ -2,9 +2,9 @@
 #define NECROMANCER_H
 
 #include <iostream>
-#include "SpellCaster.h"
+#include "Unit.h"
 
-class Necromancer : public SpellCaster {
+class Necromancer : public Unit {
     public:
         Necromancer(int hp, int mana, int damage, const std::string& name="Necromancer");
         ~Necromancer();
