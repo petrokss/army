@@ -5,6 +5,8 @@
 // #include "../units/Unit.h"
 #include "Observable.h"
 
+class Observable;
+
 class Observer {
     private:
         std::set<Observable*>* observervables;

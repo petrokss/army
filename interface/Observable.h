@@ -6,6 +6,8 @@
 //#include "../units/Necromancer.h"
 #include "Observer.h"
 
+class Observer;
+
 class Observable {
     private:
         std::set<Observer*>* observers;
