@@ -16,11 +16,15 @@
 
 
 int main() {
-    // Soldier* sol = new Soldier(100, 20, "Vasya");
+    Soldier* sol = new Soldier(100, 20, "Vasya");
     // Soldier* sol2 = new Soldier(100, 20, "Yeti");
     // Vampire* vamp = new Vampire(100, 20, "Vamp");
-    //Priest* pr = new Priest(100, 100, 20, "Filariot");
+    Priest* pr = new Priest(100, 100, 20, "Filariot");
 
+    pr->cast(sol, fireball);
+
+    delete sol;
+    delete pr;
     return 0;
 }
 

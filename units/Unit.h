@@ -2,17 +2,20 @@
 #define UNIT_H
 
 #include <iostream>
+#include <set>
 #include "../attack/BaseAttack.h"
 #include "../state/State.h"
 #include "../interface/Observable.h"
+#include "Necromancer.h"
 
 class BaseAttack;
 class State;
 
-class Unit : public Observable {
+class Unit  {
     protected:
         BaseAttack* unit_attack;
         State* unit_state;
+        std::set<Unit*>* observers;
     public:
         Unit(int hp, int damage, const std::string& name, UnitType type);
         ~Unit();
@@ -38,6 +41,10 @@ class Unit : public Observable {
         void transformToWerewolf();
         void transformToVampire();
         void ability(Unit* enemy);
+
+        void addObserver(Unit* observer);
+        void removeObserver(Unit* observer);
+        void notify();
 };
 
 std::ostream& operator<<(std::ostream& out, Unit& unit );

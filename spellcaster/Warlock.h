@@ -14,7 +14,7 @@ class Warlock : public SpellCaster {
         
         Demon* createDemon();
 
-        virtual void ability(Unit* target);
+        //virtual void ability(Unit* target);
 };
 
 #endif // WARLOCK_H

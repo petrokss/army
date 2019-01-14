@@ -21,7 +21,7 @@ void Book::addSpell(spellNames spellName, Spell* newSpell) {
 Spell* Book::findSpell(spellNames spellName) {
     std::map<spellNames, Spell*>::iterator it = spellBook->find(spellName);
     if ( it != spellBook->end() ) {
-        //std::cout << " Book has such spell: " << it->second << std::endl;
+        // std::cout << " Book has such spell: " << it->second << std::endl;
         return it->second;
     }
     std::cout << " There isn't such spell" << std::endl;
