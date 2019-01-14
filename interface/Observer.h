@@ -2,11 +2,12 @@
 #define OBSERVER_H
 
 #include <set>
-#include "../units/Unit.h"
+// #include "../units/Unit.h"
+#include "Observable.h"
 
 class Observer {
     private:
-        std::set<Unit*>* observervables;
+        std::set<Observable*>* observervables;
     public:
         Observer();
         ~Observer();
