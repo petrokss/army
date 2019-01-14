@@ -6,16 +6,18 @@
 #include "Demon.h"
 #include <set>
 
+// class Demon;
+
 class Warlock : public SpellCaster {
     private:
-        std::set<Demon*> demonList;
+        std::set<Demon*>* demonList;
     public:
         Warlock(int hp, int mana, int damage, const std::string& name="Warlock");
         ~Warlock();
         
         Demon* createDemon();
 
-        //virtual void ability(Unit* target);
+        virtual void ability(Unit* target);
 };
 
 #endif // WARLOCK_H
