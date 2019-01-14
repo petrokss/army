@@ -35,7 +35,7 @@ class State {
         const UnitType gettype() const;
         bool getIsInfected() const;   
         
-        void checkIfAlive();
+        bool checkIfAlive();
         void addHp(int value);
         void takeDamage(int damage);
         void takeMagicDamage(int points);

@@ -5,6 +5,7 @@
 #include "units/Werewolf.h"
 #include "units/Rouge.h"
 #include "units/Vampire.h"
+#include "units/Necromancer.h"
 #include "attack/BaseAttack.h"
 #include "attack/RougeAttack.h"
 #include "attack/VampireAttack.h"
@@ -20,8 +21,21 @@ int main() {
     // Soldier* sol2 = new Soldier(100, 20, "Yeti");
     // Vampire* vamp = new Vampire(100, 20, "Vamp");
     Priest* pr = new Priest(100, 100, 20, "Filariot");
+    Necromancer* necro1 = new Necromancer(100, 20, "Necro1");
+    Necromancer* necro2 = new Necromancer(100, 20, "Necro2");
+    Necromancer* necro3 = new Necromancer(100, 20, "Necro3");
+    Necromancer* necro4 = new Necromancer(100, 20, "Necro4");
 
-    pr->cast(sol, fireball);
+    necro1->attack(sol);
+    necro2->attack(sol);
+    necro3->attack(sol);
+    necro4->attack(sol);
+
+    std::cout << *sol << std::endl;
+    std::cout << *necro1 << std::endl;
+    std::cout << *necro2 << std::endl;
+    std::cout << *necro3 << std::endl;
+    std::cout << *necro4 << std::endl;
 
     delete sol;
     delete pr;

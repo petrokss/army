@@ -6,7 +6,6 @@
 #include "../attack/BaseAttack.h"
 #include "../state/State.h"
 #include "../interface/Observable.h"
-#include "Necromancer.h"
 
 class BaseAttack;
 class State;

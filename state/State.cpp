@@ -29,12 +29,13 @@ const std::string& State::getName() const {
 const UnitType State::gettype() const {
     return this->type;
 } 
-//WHAT TO DO IF UNIT IS DEAD? EXCEPTION?
-void State::checkIfAlive() {
+
+bool State::checkIfAlive() {
     if (this->getHp() <= 0 ) {
         std::cout << this->getName() << "is dead." << std::endl;
-        throw OutOfHpException();
+        return 0;
     }
+    return 1;
 }
 
 bool State::getIsInfected() const {

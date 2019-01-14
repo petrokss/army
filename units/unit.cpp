@@ -25,6 +25,7 @@ const int Unit::getHpLimit() const {
 }
 
 void Unit::addHp(int value) {
+    checkIfAlive();
     this->unit_state->addHp(value);
 }
 
@@ -41,7 +42,10 @@ State& Unit::getState() const {
 }
 
 void Unit::checkIfAlive() {
-    this->unit_state->checkIfAlive();
+    if ( !this->unit_state->checkIfAlive() ) {
+        this->notify();
+        throw OutOfHpException();
+    }
 }
 
 bool Unit::getIsInfected() const {
@@ -63,7 +67,6 @@ void Unit::takeDamage(int damage) {
 }
 
 void Unit::transformToWerewolf() {
-    //delete this->unit_state;
     delete this->unit_attack;
     this->unit_attack = new WerewolfAttack();
 }
@@ -76,14 +79,6 @@ void Unit::transformToVampire() {
 void Unit::ability(Unit* enemy) {
     this->unit_attack->ability(this, enemy);
 }
-
-
-
-
-// void Unit::takeCounterAttackDamage(int damage) {
-//     this->unit_state->takeDamage(damage / 2 );
-//     checkIfAlive();
-// }
 
 void Unit::attack(Unit* enemy) {
     this->unit_attack->attack(this, enemy);
@@ -106,8 +101,9 @@ void Unit::notify() {
     std::set<Unit*>::iterator it;
     
     for ( it = observers->begin(); it != observers->end(); it++ ) {
-        // it->addHp(this->getHp() / 4);
-        it->addHp(20);
+        Unit* observer = *it;
+
+        observer->addHp(this->getHp() / 4);
     }
 }
 
