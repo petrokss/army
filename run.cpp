@@ -27,8 +27,11 @@ int main() {
     Necromancer* necro4 = new Necromancer(100, 20, "Necro4");
 
     necro1->attack(sol);
+    std::cout << *sol << std::endl;
+
     necro2->attack(sol);
     necro3->attack(sol);
+    necro4->attack(sol);
     necro4->attack(sol);
 
     std::cout << *sol << std::endl;
@@ -37,8 +40,7 @@ int main() {
     std::cout << *necro3 << std::endl;
     std::cout << *necro4 << std::endl;
 
-    delete sol;
-    delete pr;
+    
     return 0;
 }
 
