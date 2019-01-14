@@ -10,11 +10,11 @@
 class BaseAttack;
 class State;
 
-class Unit  {
+class Unit : public Observable {
     protected:
         BaseAttack* unit_attack;
         State* unit_state;
-        std::set<Unit*>* observers;
+        std::set<Observer*>* observers;
     public:
         Unit(int hp, int damage, const std::string& name, UnitType type);
         ~Unit();
@@ -41,9 +41,9 @@ class Unit  {
         void transformToVampire();
         void ability(Unit* enemy);
 
-        void addObserver(Unit* observer);
-        void removeObserver(Unit* observer);
-        void notify();
+        void addObserver(Observer* observer);
+        void removeObserver(Observer* observer);
+        void notify(int hp);
 };
 
 std::ostream& operator<<(std::ostream& out, Unit& unit );

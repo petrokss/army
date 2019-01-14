@@ -17,7 +17,7 @@ class Observable {
 
         virtual void addObserver(Observer* observer);
         virtual void removeObserver(Observer* observer);
-        virtual void notify();
+        virtual void notify(int hp);
 
 };
 

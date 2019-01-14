@@ -5,7 +5,7 @@
 
 Unit::Unit(int hp, int damage, const std::string& name, UnitType type) {
     this->unit_state = new State(hp, damage, name, type);
-    this->observers = new std::set<Unit*>();
+    this->observers = new std::set<Observer*>();
     //this->unit_attack = new BaseAttack();
     std::cout << "Unit constructor(" << this->getName() << ", hp: "<< this->getHp() << ", dmg: " << this->getDamage() << ")" << std::endl;
 }
@@ -43,7 +43,7 @@ State& Unit::getState() const {
 
 void Unit::checkIfAlive() {
     if ( !this->unit_state->checkIfAlive() ) {
-        this->notify();
+        this->notify(this->getHp()/4);
     }
 }
 
@@ -88,21 +88,21 @@ void Unit::counterAttack(Unit* enemy) {
 }
 
 
-void Unit::addObserver(Unit* observer) {
+void Unit::addObserver(Observer* observer) {
     this->observers->insert(observer);
 }
 
-void Unit::removeObserver(Unit* observer) {
+void Unit::removeObserver(Observer* observer) {
     this->observers->erase(observer);
 }
 
-void Unit::notify() {
-    std::set<Unit*>::iterator it;
+void Unit::notify(int hp) {
+    std::set<Observer*>::iterator it;
     
     for ( it = observers->begin(); it != observers->end(); it++ ) {
-        Unit* observer = *it;
+        Observer* observer = *it;
 
-        observer->addHp(50);
+        observer->update();
     }
 }
 
