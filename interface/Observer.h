@@ -1,19 +1,19 @@
 #ifndef OBSERVER_H
 #define OBSERVER_H
 
-#include <map>
+#include <set>
 #include "../units/Unit.h"
 
 class Observer {
     private:
-        std::map<std::string, Unit*>* observeMap;
+        std::set<Unit*>* observervables;
     public:
         Observer();
         ~Observer();
 
-        void add(Unit* unit);
-        void remove(Unit* unit);
-        void notify();
+        virtual void addObservable(Observable* observable);
+        virtual void removeObservable(Observable* observable);
+        virtual void update();
 
 };
 

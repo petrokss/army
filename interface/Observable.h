@@ -1,22 +1,23 @@
-// #ifndef OBSERVABLE_H
-// #define OBSERVABLE_H
+#ifndef OBSERVABLE_H
+#define OBSERVABLE_H
 
-// #include <map>
-// #include "../units/Unit.h"
-// #include "../units/Necromancer.h"
+#include <set>
+#include "../units/Unit.h"
+//#include "../units/Necromancer.h"
+#include "Observer.h"
 
-// class Observable {
-//     private:
-//         std::map<std::string, Necromancer*>* observableMap;
-//     public:
-//         Observable();
-//         ~Observable();
+class Observable {
+    private:
+        std::set<Unit*>* observers;
+    public:
+        Observable();
+        ~Observable();
 
-//         void add(Necromancer* necro);
-//         void remove(Necromancer* necro);
-//         void notify();
+        virtual void addObserver(Observer* observer);
+        virtual void removeObserver(Observer* observer);
+        virtual void notify();
 
-// };
+};
 
 
-// #endif // OBSERVABLE_H
+#endif // OBSERVABLE_H
