@@ -33,9 +33,9 @@ const UnitType State::gettype() const {
 bool State::checkIfAlive() {
     if (this->getHp() <= 0 ) {
         std::cout << this->getName() << "is dead." << std::endl;
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
 bool State::getIsInfected() const {
@@ -60,6 +60,15 @@ void State::addHp(int value) {
         this->hp = this->hpLimit;
     }
 }
+
+void State::setHp(int value) {
+    this->hp = value;
+}
+
+void State::die() {
+    this->setHp(-1);
+}
+
 
 void State::beInfected() {
     this->isInfected = !this->isInfected;

@@ -21,6 +21,7 @@ class State {
         std::string* name;
         UnitType type;
         bool isInfected;
+        void setHp(int value);
     public:
         State(int hp,
             int damage,
@@ -40,6 +41,7 @@ class State {
         void takeDamage(int damage);
         void takeMagicDamage(int points);
         void beInfected();
+        void die();
               
 };
 

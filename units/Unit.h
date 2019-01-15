@@ -12,10 +12,11 @@ class BaseAttack;
 class State;
 
 class Unit : public Observable {
+    //private:
+        //void setHp(int hp);
     protected:
         BaseAttack* unit_attack;
         State* unit_state;
-        //std::set<Observer*>* observers;
     public:
         Unit(int hp, int damage, const std::string& name, UnitType type);
         ~Unit();
@@ -30,6 +31,7 @@ class Unit : public Observable {
         const UnitType gettype() const;
 
         void beInfected();
+        void die();
 
         void addHp(int value);
         void takeDamage(int damage);
@@ -42,9 +44,9 @@ class Unit : public Observable {
         void transformToVampire();
         void ability(Unit* enemy);
 
-        void addObserver(Observer* observer);
-        void removeObserver(Observer* observer);
-        void notify(int hp);
+        virtual void addObserver(Observer* observer);
+        virtual void removeObserver(Observer* observer);
+        virtual void notify(int hp);
 };
 
 std::ostream& operator<<(std::ostream& out, Unit& unit );

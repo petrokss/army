@@ -7,15 +7,17 @@
 class Observable;
 
 class Observer {
-    private:
+    protected:
         std::set<Observable*>* observervables;
     public:
-        Observer();
-        ~Observer();
+        // Observer();
+        // ~Observer();
 
-        // virtual void addObservable(Observable* observable);
-        // virtual void removeObservable(Observable* observable);
-        // virtual void update();
+        virtual void addObservable(Observable* observable) = 0;
+        virtual void removeObservable(Observable* observable) = 0;
+        virtual void update(int hp) = 0;
+        virtual void observerNotify() = 0;
+
 
 };
 
