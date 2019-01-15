@@ -11,7 +11,8 @@ class Necromancer : public Unit, public Observer {
     public:
         Necromancer(int hp, int damage, const std::string& name="Necromancer");
         virtual ~Necromancer();
-        
+
+        virtual void attack(Unit* enemy);
         virtual void addObservable(Observable* observable);
         virtual void removeObservable(Observable* observable);
         virtual void update(int hp);

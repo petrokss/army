@@ -7,14 +7,26 @@ Warlock::Warlock(int hp, int mana, int damage, const std::string& name) : SpellC
     std::cout << "Warlock constructor" << std::endl;
 }
 Warlock::~Warlock() {
-    std::cout << "Warlock destructor" << std::endl;
+    
 }
 
-void Warlock::createDemon() {
-    std::cout << "Demon constructor" << std::endl;
+Demon* Warlock::createDemon() {
+    Demon* demon = new Demon(50, 10);
+    this->demonList->insert(demon);
+    return demon;
+}
+
+void deleteDemon(Demon* demon) {
+    
 }
 
 
 void Warlock::ability(Unit* target) {
-    std::cout << "Warlock ability" << std::endl;
+    std::set<Demon*>::iterator it;
+
+    for( it = demonList->begin(); it != demonList->end(); demonList++ ) {
+        Demon* demon = *it;
+
+        demon->lightningBeat(target);
+    }
 }

@@ -36,7 +36,7 @@ class Unit : public Observable {
         void addHp(int value);
         void takeDamage(int damage);
         void takeCounterAttackDamage(Unit* enemy);
-        void attack(Unit* enemy);
+        virtual void attack(Unit* enemy);
         void counterAttack(Unit* enemy);
 
 

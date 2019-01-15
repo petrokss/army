@@ -6,7 +6,6 @@
 #include "../units/Soldier.h"
 #include "SpellCaster.h"
 
-//public soldier? What demon does?
 class Demon : public Soldier {
     public:
         Demon(int hp, int damage, const std::string& name="Demon");

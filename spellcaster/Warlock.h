@@ -15,7 +15,7 @@ class Warlock : public SpellCaster {
         Warlock(int hp, int mana, int damage, const std::string& name="Warlock");
         ~Warlock();
         
-        void createDemon();
+        Demon* createDemon();
 
         virtual void ability(Unit* target);
 };

@@ -9,5 +9,5 @@ Demon::~Demon() {
 }
 
 void Demon::lightningBeat(Unit* target) {
-    target->takeDamage(30);
+    target->takeDamage(10);
 }
