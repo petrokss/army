@@ -10,13 +10,9 @@ BaseAttack::~BaseAttack() {
 
 void BaseAttack::attack(Unit* attacker, Unit* enemy) {
     if ( enemy->getHp() > 0 ) {
-        if ( attacker->gettype() == NECROMANCER ) {
-            enemy->addObserver(attacker);
-        }
-
+        enemy->takeDamage(attacker->getDamage());
+        enemy->counterAttack(attacker);
     }
-    enemy->takeDamage(attacker->getDamage());
-    enemy->counterAttack(attacker);
     std::cout << "Base---Attack" << std::endl;
 }
 

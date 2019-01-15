@@ -45,7 +45,6 @@ bool State::getIsInfected() const {
 
 void State::takeDamage(int damage) {
     this->hp -= damage;
-    this->checkIfAlive();
 }
 
 void State::takeMagicDamage(int points) {

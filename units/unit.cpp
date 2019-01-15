@@ -44,7 +44,7 @@ State& Unit::getState() const {
 
 void Unit::checkIfAlive() {
     if ( !this->unit_state->checkIfAlive() ) {
-        this->notify(this->getHp()/4);
+        this->notify(this->getHpLimit()/2);
         this->die();
     }
 }

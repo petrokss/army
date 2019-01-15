@@ -3,6 +3,9 @@
 
 #include "Unit.h"
 #include "../interface/Observer.h"
+#include "../attack/NecromancerAttack.h"
+
+class NecromancerAttack;
 
 class Necromancer : public Unit, public Observer {
     public:
