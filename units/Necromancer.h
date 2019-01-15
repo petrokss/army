@@ -4,7 +4,7 @@
 #include "Unit.h"
 #include "../interface/Observer.h"
 
-class Necromancer : public Unit, public Observer {
+class Necromancer : public Unit {
     public:
         Necromancer(int hp, int damage, const std::string& name="Necromancer");
         virtual ~Necromancer();

@@ -2,22 +2,20 @@
 #define OBSERVABLE_H
 
 #include <set>
-//#include "../units/Unit.h"
-//#include "../units/Necromancer.h"
 #include "Observer.h"
 
 class Observer;
 
 class Observable {
-    private:
+    protected:
         std::set<Observer*>* observers;
     public:
-        Observable();
-        ~Observable();
+        // Observable();
+        // ~Observable();
 
-        virtual void addObserver(Observer* observer);
-        virtual void removeObserver(Observer* observer);
-        virtual void notify(int hp);
+        virtual void addObserver(Observer* observer) = 0;
+        virtual void removeObserver(Observer* observer) = 0;
+        virtual void notify(int hp) = 0;
 
 };
 

@@ -6,6 +6,7 @@
 #include "../attack/BaseAttack.h"
 #include "../state/State.h"
 #include "../interface/Observable.h"
+#include "../interface/Observer.h"
 
 class BaseAttack;
 class State;
@@ -14,7 +15,7 @@ class Unit : public Observable {
     protected:
         BaseAttack* unit_attack;
         State* unit_state;
-        std::set<Observer*>* observers;
+        //std::set<Observer*>* observers;
     public:
         Unit(int hp, int damage, const std::string& name, UnitType type);
         ~Unit();

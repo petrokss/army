@@ -43,7 +43,7 @@ State& Unit::getState() const {
 
 void Unit::checkIfAlive() {
     if ( !this->unit_state->checkIfAlive() ) {
-        this->notify(this->getHp()/4);
+        //this->notify(this->getHp()/4);
     }
 }
 
@@ -102,7 +102,7 @@ void Unit::notify(int hp) {
     for ( it = observers->begin(); it != observers->end(); it++ ) {
         Observer* observer = *it;
 
-        observer->update();
+        //observer->update();
     }
 }
 
