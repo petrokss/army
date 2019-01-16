@@ -7,8 +7,6 @@
 class VampireAttack;
 
 class Vampire : public Unit {
-    private:
-        //VampireAttack* vampire_attack;
     public:
         Vampire(int hp, int damage, const std::string& name="Vampire");
         virtual ~Vampire();

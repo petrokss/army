@@ -8,6 +8,10 @@ Demon::~Demon() {
     std::cout << "Demon destructor" << std::endl;
 }
 
+void Demon::die() {
+    delete this;
+}
+
 void Demon::lightningBeat(Unit* target) {
     target->takeDamage(10);
 }

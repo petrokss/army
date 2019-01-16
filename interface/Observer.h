@@ -8,7 +8,7 @@ class Observable;
 
 class Observer {
     protected:
-        std::set<Observable*>* observervables;
+        std::set<Observable*>* observables;
     public:
         // Observer();
         // ~Observer();

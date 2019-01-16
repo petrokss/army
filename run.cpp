@@ -13,37 +13,49 @@
 #include "spellcaster/SpellCaster.h"
 #include "spellcaster/Wizzard.h"
 #include "spellcaster/Priest.h"
+#include "spellcaster/Healer.h"
+#include "spellcaster/Warlock.h"
 #include "spell/Book.h"
 
 
 int main() {
-    Soldier* sol = new Soldier(100, 20, "Vasya");
-    // Soldier* sol2 = new Soldier(100, 20, "Yeti");
-    // Vampire* vamp = new Vampire(100, 20, "Vamp");
-    Priest* pr = new Priest(100, 100, 20, "Filariot");
-    Necromancer* necro1 = new Necromancer(100, 20, "Necro1");
-    Necromancer* necro2 = new Necromancer(100, 20, "Necro2");
-    Necromancer* necro3 = new Necromancer(100, 20, "Necro3");
-    Necromancer* necro4 = new Necromancer(100, 20, "Necro4");
+   Warlock* warl = new Warlock(100, 100, 20);
+   Soldier* sol = new Soldier(100, 20, "Vasya");
 
-    necro1->attack(sol);
-    std::cout << *sol << std::endl;
-
-    necro2->attack(sol);
-    necro3->attack(sol);
-    necro4->attack(sol);
-    necro4->attack(sol);
+   warl->createDemon();
+   //warl->createDemon();
+   //warl->createDemon();
+   warl->ability(sol);
 
     std::cout << *sol << std::endl;
-    std::cout << *necro1 << std::endl;
-    std::cout << *necro2 << std::endl;
-    std::cout << *necro3 << std::endl;
-    std::cout << *necro4 << std::endl;
+    std::cout << *warl << std::endl;
 
     
     return 0;
 }
 
+
+    // // Soldier* sol2 = new Soldier(100, 20, "Yeti");
+    // // Vampire* vamp = new Vampire(100, 20, "Vamp");
+    // Priest* pr = new Priest(100, 100, 20, "Filariot");
+    // Necromancer* necro1 = new Necromancer(100, 20, "Necro1");
+    // Necromancer* necro2 = new Necromancer(100, 20, "Necro2");
+    // Necromancer* necro3 = new Necromancer(100, 20, "Necro3");
+    // Necromancer* necro4 = new Necromancer(100, 20, "Necro4");
+
+    // necro1->attack(sol);
+    // std::cout << *sol << std::endl;
+
+    // necro2->attack(sol);
+    // necro3->attack(sol);
+    // necro4->attack(sol);
+    // necro4->attack(sol);
+
+    // std::cout << *sol << std::endl;
+    // std::cout << *necro1 << std::endl;
+    // std::cout << *necro2 << std::endl;
+    // std::cout << *necro3 << std::endl;
+    // std::cout << *necro4 << std::endl;
 
 
 

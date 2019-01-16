@@ -2,7 +2,6 @@
 
 Werewolf::Werewolf(int hp, int damage, const std::string& name) : Unit(hp, damage, name, WEREWOLF) {
     this->unit_attack = new WerewolfAttack();
-    //this->werewolf_attack = new WerewolfAttack();
     this->wolf_state = NULL;
     this->human_state = this->unit_state;
     std::cout << "Werewolf construntor" << std::endl;
@@ -19,9 +18,8 @@ State& Werewolf::getWolfState() const {
     return *(this->wolf_state);
 }
 
-//add to WerewolfAttack after every attack human_state & wolf_state must be updated
-//~~add new enum element WOLF to better indicate wolf and werewolf
 void Werewolf::turnIntoWolf() {
+    this->unit_attack = new WerewolfAttack();
     if ( this->wolf_state == NULL ) {
         this->wolf_state = new State(this->getHpLimit()+20, this->getDamage()+20, "Wolf", WEREWOLF);
     }

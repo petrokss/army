@@ -42,6 +42,11 @@ State& Unit::getState() const {
     return *(this->unit_state);
 }
 
+bool Unit::ifAlive() {
+    return this->unit_state->checkIfAlive();
+}
+
+
 void Unit::checkIfAlive() {
     if ( !this->unit_state->checkIfAlive() ) {
         this->notify(this->getHpLimit()/2);

@@ -3,6 +3,9 @@
 
 #include <iostream>
 #include "SpellCaster.h"
+#include "../spell/Spell.h"
+#include "../spell/Fireball.h"
+#include "../spell/Heal.h"
 #include "Demon.h"
 #include <set>
 
@@ -15,8 +18,10 @@ class Warlock : public SpellCaster {
         Warlock(int hp, int mana, int damage, const std::string& name="Warlock");
         ~Warlock();
         
-        Demon* createDemon();
+        void createDemon();
+        void eraseDemon(Demon* demon);
 
+        virtual void die();
         virtual void ability(Unit* target);
 };
 

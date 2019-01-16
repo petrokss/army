@@ -10,6 +10,8 @@ class Demon : public Soldier {
     public:
         Demon(int hp, int damage, const std::string& name="Demon");
         ~Demon();
+
+        virtual void die();
         
         void lightningBeat(Unit* target);
 };
