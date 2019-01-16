@@ -11,7 +11,7 @@ BaseAttack::~BaseAttack() {
 void BaseAttack::attack(Unit* attacker, Unit* enemy) {
     if ( enemy->getHp() > 0 ) {
         enemy->takeDamage(attacker->getDamage());
-        if ( attacker->getHp() > 0 ) {
+        if ( enemy->getHp() > 0 ) {
             enemy->counterAttack(attacker);
         }
     }
