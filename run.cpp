@@ -19,34 +19,61 @@
 
 
 int main() {
-   Soldier* sol = new Soldier(100, 20, "Vasya");
-   // Priest* pr = new Priest(100, 100, 20, "Filariot");
+   Soldier* sol1 = new Soldier(100, 20, "Vasya");
+   Soldier* sol2 = new Soldier(100, 20, "Petya");
+   Vampire* vamp1 = new Vampire(100, 20, "Edvard");
+   Vampire* vamp2 = new Vampire(100, 20, "Bella");
+   Werewolf* wwf = new Werewolf(100, 20);
+   Priest* pr = new Priest(100, 100, 20, "Filariot");
    Necromancer* necro1 = new Necromancer(100, 20, "Necro1");
    Necromancer* necro2 = new Necromancer(100, 20, "Necro2");
    Necromancer* necro3 = new Necromancer(100, 20, "Necro3");
    Necromancer* necro4 = new Necromancer(100, 20, "Necro4");
 
-   necro1->attack(sol);
-   std::cout << *sol << std::endl;
-
-   necro2->attack(sol);
-
-   necro1->attack(necro2);
-   necro2->attack(necro3);
-   necro3->attack(necro4);
-   necro3->attack(sol);
-   necro3->attack(sol);
-   necro4->attack(necro1);
-   necro4->attack(sol);
-
-   std::cout << *sol << std::endl;
+   necro1->attack(wwf);
+   wwf->ability(necro1);
    std::cout << *necro1 << std::endl;
+   necro1->ability(necro2);
    std::cout << *necro2 << std::endl;
-   std::cout << *necro3 << std::endl;
-   std::cout << *necro4 << std::endl;
+   wwf->ability(vamp1);
+   // wwf->turnIntoWolf();
+   // wwf->attack(necro1);
+   // std::cout << *wwf << "wolf"<< std::endl;
+   // wwf->turnIntoWerewolf();
+   // std::cout << *wwf << "Werewolf"<< std::endl;
 
-    
-    return 0;
+
+   // necro1->attack(sol1);
+   // std::cout << *sol1 << std::endl;
+
+   // necro2->attack(sol1);
+
+   // necro1->attack(necro2);
+   // necro2->attack(necro3);
+   // necro3->attack(necro4);
+   // necro3->attack(sol1);
+   // necro3->attack(sol1);
+   // necro4->attack(necro1);
+   // necro4->attack(sol1);
+
+   // std::cout << *sol1 << std::endl;
+   // std::cout << *necro1 << std::endl;
+   // std::cout << *necro2 << std::endl;
+   // std::cout << *necro3 << std::endl;
+   // std::cout << *necro4 << std::endl;
+
+   delete sol1;
+   delete sol2;
+   delete vamp1;
+   delete vamp2;
+   delete wwf;
+   delete pr;
+   delete necro1;
+   delete necro2;
+   delete necro3;
+   delete necro4;
+
+   return 0;
 }
 
 

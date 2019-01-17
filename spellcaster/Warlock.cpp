@@ -4,12 +4,15 @@
 Warlock::Warlock(int hp, int mana, int damage, const std::string& name) : SpellCaster(hp, mana, damage, name) {
     this->demonList = new std::set<Demon*>();
     this->unit_attack = new BaseAttack();
+    this->magic_attack = new MagicAttack();
     this->spellBook->addSpell(fireball, new Fireball(30, 30));
     this->spellBook->addSpell(heal, new Heal(30, 15));
 
     std::cout << "Warlock constructor" << std::endl;
 }
 Warlock::~Warlock() {
+    delete this->magic_attack;
+    delete this->unit_attack;
     std::cout << "Warlock destructor" << std::endl;
 }
 

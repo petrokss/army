@@ -6,6 +6,7 @@ Necromancer::Necromancer(int hp, int damage, const std::string& name) : Unit(hp,
     std::cout << "Necromancer constructor" << std::endl;
 }
 Necromancer::~Necromancer() {
+    delete this->unit_attack;
     std::cout << "Necromancer destructor" << std::endl;
 }
 
@@ -16,7 +17,6 @@ void Necromancer::attack(Unit* enemy) {
         Unit::attack(enemy);
     }
 }
-
 
 void Necromancer::addObservable(Observable* observable) {
     this->observables->insert(observable);
@@ -38,7 +38,7 @@ void Necromancer::observerNotify() {
     }
 }
 
-void Necromancer::ability(Unit* target) {
-    this->addHp(target->getHpLimit()/5);
-    target->takeDamage(this->getHpLimit()/5);
-}
+// void Necromancer::ability(Unit* target) {
+//     this->addHp(target->getHpLimit()/5);
+//     target->takeDamage(this->getHpLimit()/5);
+// }

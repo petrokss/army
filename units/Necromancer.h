@@ -19,7 +19,6 @@ class Necromancer : public Unit, public Observer {
         virtual void update(int hp);
         virtual void observerNotify();
 
-        virtual void ability(Unit* target);
 };
 
 #endif // NECROMANCER_H

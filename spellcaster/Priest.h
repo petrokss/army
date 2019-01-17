@@ -7,12 +7,13 @@
 #include "../spell/Fireball.h"
 #include "../spell/Heal.h"
 #include "../attack/PriestAttack.h"
+#include "../attack/MagicPriestAttack.h"
 
 class PriestAttack;
 
 class Priest : public SpellCaster {
-    private:
-        PriestAttack* priest_attack;
+    // private:
+    //     PriestAttack* priest_attack;
     public:
         Priest(int hp, int mana, int damage, const std::string& name="Priest");
         ~Priest();

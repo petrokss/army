@@ -7,5 +7,6 @@ Soldier::Soldier(int hp, int damage, const std::string& name) : Unit(hp, damage,
 }
 
 Soldier::~Soldier(){
+    delete this->unit_attack;
     std::cout << "Soldier destructor" << std::endl;
 }

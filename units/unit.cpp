@@ -9,12 +9,11 @@ Unit::Unit(int hp, int damage, const std::string& name, UnitType type) {
     //this->unit_attack = new BaseAttack();
     std::cout << "Unit constructor(" << this->getName() << ", hp: "<< this->getHp() << ", dmg: " << this->getDamage() << ")" << std::endl;
 }
-//WHAT TO DELETE IN DESTRUCTOR??
+
 Unit::~Unit() {
     std::cout << "Unit destructor(" << this->getName() << ")" << std::endl;
     delete this->unit_state;
     delete this->observers;
-    //delete(this->unit_attack);
 }
 
 const int Unit::getHp() const {
@@ -46,7 +45,6 @@ bool Unit::ifAlive() {
     return this->unit_state->checkIfAlive();
 }
 
-
 void Unit::checkIfAlive() {
     if ( !this->unit_state->checkIfAlive() ) {
         this->notify(this->getHpLimit()/2);
@@ -62,14 +60,9 @@ const UnitType Unit::gettype() const {
     return this->unit_state->gettype();
 }
 
-
 void Unit::beInfected() {
     return this->unit_state->beInfected();
 }
-
-// void Unit::setHp(int hp) {
-//     this->unit_state->setHp(hp);
-// }
 
 void Unit::die() {
     this->unit_state->die();
