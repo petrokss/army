@@ -1,10 +1,8 @@
 #include "SpellCaster.h"
 
-//In spellcaster constructor is called twice: in Unit constr and in magic_state - the same parameters - is it OK?
 SpellCaster::SpellCaster(int hp, int mana, int damage, const std::string& name) : Unit(hp, damage, name, MAGIC) {
     this->magic_state = new MagicState(hp, damage, name, mana);
     //this->magic_attack = new MagicAttack();
-    //this->spellBook = new std::map<spellNames, Spell*>;
     this->spellBook = new Book();
     std::cout << " SpellCaster [" << this->getName() << "] constructor" << std::endl;
 }
@@ -44,12 +42,6 @@ void SpellCaster::cast(Unit* enemy, spellNames spellName) {
     this->magic_attack->cast(this, enemy, spellName);
 }
 
-
-
-// Book& SpellCaster::showSpellBook() {
-//     std::cout << getSpellBook() << std::endl;
-// }
-
 std::ostream& operator<<(std::ostream& out, SpellCaster& spellcaster ) {
     out << spellcaster.getName();
     out << " [hp: " << spellcaster.getHp();
@@ -58,20 +50,3 @@ std::ostream& operator<<(std::ostream& out, SpellCaster& spellcaster ) {
     out << "]";
     return out;
 }
-
-
-
-// std::ostream& operator<<(std::ostream& os, const std::map<spellNames, Spell*>& spellBook) {
-//     for (const auto &p : spellBook) {
-//         os << p.first << ": " << p.second;
-//     }
-//     return os;
-// }
-
-
-// std::ostream& operator<<(std::ostream& os, const std::map<spellNames, Spell*>& spellBook) {
-//     for (std::map<spellNames, Spell*>::const_iterator it = spellBook.begin(); it != spellBook.end(); it++ ) {
-//         os << it->first << " " << it->second;
-//     }
-//     return os;
-// }

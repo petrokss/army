@@ -25,17 +25,22 @@ int main() {
    Vampire* vamp2 = new Vampire(100, 20, "Bella");
    Werewolf* wwf = new Werewolf(100, 20);
    Priest* pr = new Priest(100, 100, 20, "Filariot");
+   Wizzard* wiz = new Wizzard(100, 100, 20, "Mag");
    Necromancer* necro1 = new Necromancer(100, 20, "Necro1");
    Necromancer* necro2 = new Necromancer(100, 20, "Necro2");
    Necromancer* necro3 = new Necromancer(100, 20, "Necro3");
    Necromancer* necro4 = new Necromancer(100, 20, "Necro4");
 
-   necro1->attack(wwf);
-   wwf->ability(necro1);
-   std::cout << *necro1 << std::endl;
-   necro1->ability(necro2);
-   std::cout << *necro2 << std::endl;
-   wwf->ability(vamp1);
+   // necro1->attack(wwf);
+   vamp1->ability(necro1);
+   // std::cout << *necro1 << std::endl;
+   // //necro1->ability(necro2);
+   // std::cout << *necro2 << std::endl;
+   // wwf->ability(vamp1);
+
+   //wiz->cast(pr, fireball);
+   //std::cout << *pr << std::endl;
+   
    // wwf->turnIntoWolf();
    // wwf->attack(necro1);
    // std::cout << *wwf << "wolf"<< std::endl;
@@ -43,24 +48,24 @@ int main() {
    // std::cout << *wwf << "Werewolf"<< std::endl;
 
 
-   // necro1->attack(sol1);
-   // std::cout << *sol1 << std::endl;
+   necro1->attack(sol1);
+   std::cout << *sol1 << std::endl;
 
-   // necro2->attack(sol1);
+   necro2->attack(sol1);
 
-   // necro1->attack(necro2);
-   // necro2->attack(necro3);
-   // necro3->attack(necro4);
-   // necro3->attack(sol1);
-   // necro3->attack(sol1);
-   // necro4->attack(necro1);
-   // necro4->attack(sol1);
+   necro1->attack(necro2);
+   necro2->attack(necro3);
+   necro3->attack(necro4);
+   necro3->attack(sol1);
+   necro3->attack(sol1);
+   necro4->attack(necro1);
+   necro4->attack(sol1);
 
-   // std::cout << *sol1 << std::endl;
-   // std::cout << *necro1 << std::endl;
-   // std::cout << *necro2 << std::endl;
-   // std::cout << *necro3 << std::endl;
-   // std::cout << *necro4 << std::endl;
+   std::cout << *sol1 << std::endl;
+   std::cout << *necro1 << std::endl;
+   std::cout << *necro2 << std::endl;
+   std::cout << *necro3 << std::endl;
+   std::cout << *necro4 << std::endl;
 
    delete sol1;
    delete sol2;

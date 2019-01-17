@@ -6,7 +6,7 @@ Necromancer::Necromancer(int hp, int damage, const std::string& name) : Unit(hp,
     std::cout << "Necromancer constructor" << std::endl;
 }
 Necromancer::~Necromancer() {
-    delete this->unit_attack;
+    //delete this->unit_attack;
     std::cout << "Necromancer destructor" << std::endl;
 }
 
